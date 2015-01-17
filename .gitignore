@@ -41,8 +41,8 @@ nosetests.xml
 coverage.xml
 
 # Translations
-*.mo
-*.pot
+# *.mo
+# *.pot
 
 # Django stuff:
 *.log
@@ -52,3 +52,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Temp file
+*~

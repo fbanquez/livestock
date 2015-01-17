@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_embryo_action" model="ir.actions.act_window">
+            <field name="name">Embryo</field>
+            <field name="res_model">livestock.embryo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <menuitem id="livestock_menu" name= "Livestock"/>
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to embryo option -->
+        <menuitem id="livestock_embryo_submenu" parent="livestock_menu" name="Embryo"/>
+        <menuitem id="livestock_embryo_submenu_action" parent="livestock_embryo_submenu" name="Embryo" action="livestock_embryo_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_embryo_tree" model="ir.ui.view">
+            <field name="name">livestock.embryo.tree</field>
+            <field name="model">livestock.embryo</field>
+            <field name="arch" type="xml">
+                <tree string="Embryo Tree">
+                    <field name="name"/>
+                    <field name="species"/>
+                    <field name="race"/>
+                    <field name="mother"/>
+                    <field name="father"/>
+                    <field name="phase"/>
+                    <field name="quality"/>
+                    <field name="created_date"/>
+                    <field name="farm"/>
+                    <field name="responsible"/>
+                    <field name="location"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_embryo_form" model="ir.ui.view">
+            <field name="name">livestock.embryo.form</field>
+            <field name="model">livestock.embryo</field>
+            <field name="arch" type="xml">
+                <form string="Embryo Form">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <separator colspan="4" string="Basic Information"/>
+                            <field name="name"/>
+                            <field name="species"/>
+                            <field name="race"/>
+                        </group>
+                        <group col="4">
+                            <field name="active"/>
+                            <field name="created_date"/>
+                        </group>
+                        <group col="2">
+                            <separator colspan="2" string="Complementary Information"/>
+                            <group col="2">
+                                <field name="mother"/>
+                                <field name="father"/>
+                                <field name="phase"/>
+                                <field name="quality"/>
+                            </group>
+                            <group col="2">
+                                <field name="farm"/>
+                                <field name="responsible"/>
+                                <field name="location"/>
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
