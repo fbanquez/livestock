@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_livestock_embryo,livestock.embryo,model_livestock_embryo,,1,0,0,0
+access_livestock_starw,livestock.straw,model_livestock_straw,,1,0,0,0

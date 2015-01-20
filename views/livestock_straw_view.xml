@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_straw_action" model="ir.actions.act_window">
+            <field name="name">Straw</field>
+            <field name="res_model">livestock.straw</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to straw option -->
+        <menuitem id="livestock_genetic_submenu" parent="livestock_menu" name="Genetic Manipulation"/>
+        <menuitem id="livestock_straw_submenu_action" parent="livestock_genetic_submenu" name="Straw" action="livestock_straw_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_straw_tree" model="ir.ui.view">
+            <field name="name">livestock.straw.tree</field>
+            <field name="model">livestock.straw</field>
+            <field name="arch" type="xml">
+                <tree string="Straw Tree">
+                    <field name="key"/>
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="types"/>
+                    <field name="created_date"/>
+                    <field name="contents"/>
+                    <field name="responsible"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_straw_form" model="ir.ui.view">
+            <field name="name">livestock.straw.form</field>
+            <field name="model">livestock.straw</field>
+            <field name="arch" type="xml">
+                <form string="Straw Form">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <field name="key"/>
+                            <field name="name"/>
+                            <field name="color"/>
+                            <field name="types"/>
+                            <field name="created_date"/>
+                            <field name="contents"/>
+                            <field name="responsible"/>
+                            <field name="active"/>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

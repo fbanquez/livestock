@@ -27,6 +27,7 @@
         #'security/ir.model.access.csv',
         'templates.xml',
         'views/livestock_embryo_view.xml',
+        'views/livestock_straw_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
