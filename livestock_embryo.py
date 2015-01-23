@@ -29,9 +29,9 @@ class livestock_embryo(models.Model):
     father = fields.Char(string='Father', size=25, required=True, help="Male donor")
     phase = fields.Selection(string='Phase', selection=_phase_embryo_selection, required=True, help="Phase embryo")
     quality = fields.Selection(string='Quality', selection=_quality_embryo_selection, required=True, help="Quality embryo")
-    created_date = fields.Date(string='Created', default=datetime.now().strftime('%Y-%m-%d'), required=True, help="Date of creation of the embryo")
+    created_date = fields.Date(string='Created', default=datetime.now(), required=True, help="Date of creation of the embryo")
     farm = fields.Char(string='Farm', size=25, required=True, help="Farm where the embryo was created")
-    responsible = fields.Char(string='Responsible', size=25, required=True, help="Biologist, veterinarian or person responsible for the creation of the embryo")
+    responsible = fields.Char(string='Responsible', size=25, required=True, default=lambda self: self.env.user.name, help="Biologist, veterinarian or person responsible for the creation of the embryo")
     location = fields.Char(string='Thermo', size=25, required=True, help="Thermos containing the embryo")
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable record")
 
