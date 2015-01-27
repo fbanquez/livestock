@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_thermo_action" model="ir.actions.act_window">
+            <field name="name">Thermo</field>
+            <field name="res_model">livestock.thermo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to thermo option -->
+        <menuitem id="livestock_genetic_submenu" parent="livestock_menu" name="Genetic Manipulation"/>
+        <menuitem id="livestock_thermo_submenu_action" parent="livestock_genetic_submenu" name="Thermo" action="livestock_thermo_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_thermo_tree" model="ir.ui.view">
+            <field name="name">livestock.thermo.tree</field>
+            <field name="model">livestock.thermo</field>
+            <field name="arch" type="xml">
+                <tree string="Thermo Tree">
+                    <field name="name"/>
+                    <field name="characteristics"/>
+                    <field name="capacity"/>
+                    <field name="racks"/>
+                    <field name="shelves"/>
+                    <field name="created_date"/>
+                    <field name="purpose"/>
+                    <field name="farm"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_thermo_form" model="ir.ui.view">
+            <field name="name">livestock.thermo.form</field>
+            <field name="model">livestock.thermo</field>
+            <field name="arch" type="xml">
+                <form string="Thermo Form">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <field name="name"/>
+                            <field name="characteristics"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="capacity"/>
+                                <field name="racks"/>
+                                <field name="shelves"/>
+                            </group>
+                            <group>
+                                <field name="created_date"/>
+                                <field name="purpose"/>
+                                <field name="farm"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
