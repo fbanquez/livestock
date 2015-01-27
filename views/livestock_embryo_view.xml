@@ -18,8 +18,8 @@
         <menuitem id="livestock_menu" name= "Livestock"/>
         <!-- a first level in the left side menu is needed before using action = attribute -->
         <!-- This menu action belong to embryo option -->
-        <menuitem id="livestock_embryo_submenu" parent="livestock_menu" name="Embryo"/>
-        <menuitem id="livestock_embryo_submenu_action" parent="livestock_embryo_submenu" name="Embryo" action="livestock_embryo_action"/>
+        <menuitem id="livestock_genetic_submenu" parent="livestock_menu" name="Genetic Manipulation"/>
+        <menuitem id="livestock_embryo_submenu_action" parent="livestock_genetic_submenu" name="Embryo" action="livestock_embryo_action"/>
 
         <!-- Tree View -->
         <record id="livestock_embryo_tree" model="ir.ui.view">
