@@ -58,14 +58,49 @@
                                 <field name="shelves"/>
                             </group>
                             <group>
-                                <field name="created_date"/>
                                 <field name="purpose"/>
                                 <field name="farm"/>
+                                <field name="created_date"/>
                             </group>
                             <group>
                                 <field name="active"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Straws">
+                                    <field name="straws_ids">
+                                        <tree string="Straws into thermo">
+                                            <field name="key"/>
+                                            <field name="name"/>
+                                            <field name="color"/>
+                                            <field name="types"/>
+                                            <field name="created_date"/>
+                                            <field name="contents"/>
+                                            <field name="responsible"/>
+                                        </tree>
+                                    </field>
+                            </page>
+                            <page string="Measures">
+                                    <field name="measure_ids">
+                                        <tree string="Thermo nitrogen measurement">
+                                            <field name="name"/>
+                                            <field name="event_date"/>
+                                            <field name="nitrogen_amount"/>
+                                            <field name="event_type"/>
+                                        </tree>
+                                    </field>
+                            </page>
+                            <page string="Refill">
+                                    <field name="refill_ids">
+                                        <tree string="Thermo nitrogen refill">
+                                            <field name="name"/>
+                                            <field name="event_date"/>
+                                            <field name="nitrogen_amount"/>
+                                            <field name="event_type"/>
+                                        </tree>
+                                    </field>
+                            </page>
+                        </notebook>
                     </sheet>                    
                 </form>
             </field>
