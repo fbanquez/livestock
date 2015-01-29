@@ -46,15 +46,22 @@
             <field name="arch" type="xml">
                 <form string="Straw Form">
                     <sheet>
-                        <group colspan="2" col="2">
-                            <field name="key"/>
-                            <field name="name"/>
-                            <field name="color"/>
-                            <field name="types"/>
-                            <field name="created_date"/>
-                            <field name="contents"/>
-                            <field name="responsible"/>
-                            <field name="active"/>
+                        <group col="2">
+                            <group col="2">
+                                <field name="key"/>
+                                <field name="name"/>
+                                <field name="color"/>
+                                <field name="types"/>
+                                <field name="contents"/>
+                            </group>
+                            <group col="2">
+                                <field name="thermo_id"/>      
+                                <field name="responsible"/>
+                                <field name="created_date"/>                       
+                            </group>
+                            <group col="2">
+                                <field name="active"/>
+                            </group>
                         </group>
                     </sheet>                    
                 </form>

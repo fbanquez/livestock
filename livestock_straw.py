@@ -9,8 +9,8 @@ class livestock_straw(models.Model):
     _order = "key desc"
 
     def _type_straw_selection(self):
-        return(('no', "Normal"),
-               ('mi', "Mini"))
+        return(('nornal', "Normal"),
+               ('mini', "Mini"))
 
     # Fields of the Straw Model
     name = fields.Char(string='Name', size=25, required=True, select=True, help="Straw name")
@@ -20,5 +20,6 @@ class livestock_straw(models.Model):
     created_date = fields.Date(string='Created', default=datetime.now(), required=True, help="Creation date of the straw")
     contents = fields.Char(string='Contents', size=25, required=True, help="Content of a straw")
     responsible = fields.Char(string='Responsible', size=25, required=True, default=lambda self: self.env.user.name, help="Biologist, veterinarian or person responsible for the creation of the straw")
+    thermo_id = fields.Many2one('livestock.thermo', string='Thermo', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable record")
 
