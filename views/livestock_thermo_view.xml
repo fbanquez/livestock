@@ -61,6 +61,8 @@
                                 <field name="purpose"/>
                                 <field name="farm"/>
                                 <field name="created_date"/>
+                                <field name="last_measure"/>
+                                <field name="last_refill"/>
                             </group>
                             <group>
                                 <field name="active"/>

@@ -12,6 +12,50 @@ class livestock_thermo(models.Model):
         return(('embryo', "Embryo"),
                ('semen', "Semen"))
 
+    @api.one
+    @api.depends('measure_ids')
+    def _measure_compute_date(self):
+        id_key = self.id or 0
+        query = """
+        SELECT max(event_date)
+          FROM livestock_thermo_event
+         WHERE can_id = %s
+           AND event_type = %s
+       LIMIT 1
+        """
+        self.env.cr.execute(query, (id_key, 'measure'))
+        reg = self.env.cr.fetchone()
+        date_today = datetime.now().date()
+        if reg[0] is None:
+            date_measure = date_today
+        else:
+            date_measure = datetime.strptime(reg[0], '%Y-%m-%d').date()
+        
+        diff = date_today - date_measure
+        self.last_measure = diff.days
+
+    @api.one
+    @api.depends('refill_ids')
+    def _refill_compute_date(self):
+        id_key = self.id or 0
+        query = """
+        SELECT max(event_date)
+          FROM livestock_thermo_event
+         WHERE can_id = %s
+           AND event_type = %s
+       LIMIT 1
+        """
+        self.env.cr.execute(query, (id_key, 'refill'))
+        reg = self.env.cr.fetchone()
+        date_today = datetime.now().date()
+        if reg[0] is None:
+            date_measure = date_today
+        else:
+            date_measure = datetime.strptime(reg[0], '%Y-%m-%d').date()
+        
+        diff = date_today - date_measure
+        self.last_refill = diff.days
+
     # Fields of the Thermo Model
     name = fields.Char(string='Identifier', size=8, required=True, select=True, help="Thermo Identifier")
     characteristics =  fields.Char(string='Characteristics', size=50, required=True, help="Thermo characeristics")
@@ -22,8 +66,11 @@ class livestock_thermo(models.Model):
     purpose = fields.Selection(string='Purpose', selection=_purpose_thermo_selection, required=True, help="Thermo purpose. Store embryos or semen")
     farm = fields.Char(string='Farm', size=25, required=True, help="Farm where thermo was created")
     straws_ids = fields.One2many('livestock.straw', 'thermo_id', string=None, copy=False)
+    last_measure = fields.Integer(string='Last Measure', copy=False, readonly=True, compute='_measure_compute_date', help="Days since the last measurement of nitrogen")
+    last_refill = fields.Integer(string='Last Refill', copy=False, readonly=True, compute='_refill_compute_date', help="Days since last refill of nitrogen")
     measure_ids = fields.One2many('livestock.thermo.event', 'can_id', copy=False, domain=[('event_type','=','measure')])
     refill_ids = fields.One2many('livestock.thermo.event', 'can_id', copy=False, domain=[('event_type','=','refill')])
+    farm_id = fields.Many2one('livestock.farm', string='Farm', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable thermo record")
 
 
