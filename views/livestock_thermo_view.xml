@@ -48,6 +48,7 @@
                 <form string="Thermo Form">
                     <sheet>
                         <group colspan="2" col="2">
+                            <separator colspan="4" string="Thermo Information"/>
                             <field name="name"/>
                             <field name="characteristics"/>
                         </group>

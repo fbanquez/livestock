@@ -47,6 +47,7 @@
                 <form string="Straw Form">
                     <sheet>
                         <group col="2">
+                            <separator colspan="4" string="Straw Information"/>
                             <group col="2">
                                 <field name="key"/>
                                 <field name="name"/>
