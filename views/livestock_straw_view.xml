@@ -27,8 +27,8 @@
             <field name="model">livestock.straw</field>
             <field name="arch" type="xml">
                 <tree string="Straw Tree">
-                    <field name="key"/>
                     <field name="name"/>
+                    <field name="appellation"/>
                     <field name="color"/>
                     <field name="types"/>
                     <field name="created_date"/>
@@ -49,8 +49,8 @@
                         <group col="2">
                             <separator colspan="4" string="Straw Information"/>
                             <group col="2">
-                                <field name="key"/>
                                 <field name="name"/>
+                                <field name="appellation"/>
                                 <field name="color"/>
                                 <field name="types"/>
                                 <field name="contents"/>

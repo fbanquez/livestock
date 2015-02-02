@@ -73,8 +73,8 @@
                             <page string="Straws">
                                     <field name="straws_ids">
                                         <tree string="Straws into thermo">
-                                            <field name="key"/>
                                             <field name="name"/>
+                                            <field name="appellation"/>
                                             <field name="color"/>
                                             <field name="types"/>
                                             <field name="created_date"/>

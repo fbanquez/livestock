@@ -32,6 +32,6 @@ class livestock_embryo(models.Model):
     created_date = fields.Date(string='Created', default=datetime.now(), required=True, help="Date of creation of the embryo")
     farm = fields.Char(string='Farm', size=25, required=True, help="Farm where the embryo was created")
     responsible = fields.Char(string='Responsible', size=25, required=True, default=lambda self: self.env.user.name, help="Biologist, veterinarian or person responsible for the creation of the embryo")
-    location = fields.Char(string='Thermo', size=25, required=True, help="Thermos containing the embryo")
+    straw_id = fields.Many2one('livestock.straw', string='Straw', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable record")
 

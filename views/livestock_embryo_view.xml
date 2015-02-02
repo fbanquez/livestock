@@ -37,7 +37,6 @@
                     <field name="created_date"/>
                     <field name="farm"/>
                     <field name="responsible"/>
-                    <field name="location"/>
                     <field name="active"/>
                 </tree>
             </field>
@@ -71,7 +70,7 @@
                             <group col="2">
                                 <field name="farm"/>
                                 <field name="responsible"/>
-                                <field name="location"/>
+                                <field name="straw_id"/>
                             </group>
                         </group>
                     </sheet>                    
