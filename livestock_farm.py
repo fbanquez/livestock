@@ -15,7 +15,7 @@ class livestock_farm(models.Model):
                ('commercial', "Commercial Breeding"),
                ('fattening', "Fattening"))
 
-    # Fields of the Thermo Model
+    # Fields of the Farm Model
     key =  fields.Char(string='Identifier', size=8, required=True, help="Identifier of the farm")
     owner = fields.Char(string='Owner', size=25, help="Owner of the farm")
     breeder_id = fields.Char(string='Breeder Id', size=8, help="Identifier of the breeder")
@@ -25,9 +25,10 @@ class livestock_farm(models.Model):
     corrals = fields.Integer(string='Corrals', required=True, help="Numbers of corrals into the farm")
     grass_area = fields.Float(string='Grass Area', digits=(5, 2), required=True, help="Percentage of land covered with grass farm")
     bush_area = fields.Float(string='Bush Area', digits=(5, 2), required=True, help="Percentage of land covered with bush farm")
-    grass_prevalent = fields.Text(string='Grass Prevalent', required=False, help="Iindicates the kind of dominant grass on the farm")
-    bush_prevalent = fields.Text(string='Bush Prevalent', required=False, help="Iindicates the kind of dominant bush on the farm")
+    grass_prevalent = fields.Text(string='Grass Prevalent', required=False, help="Indicates the kind of dominant grass on the farm")
+    bush_prevalent = fields.Text(string='Bush Prevalent', required=False, help="Indicates the kind of dominant bush on the farm")
     map_farm = fields.Char(string='Farm Map', required=False, help="Map of the farm")
     thermo_ids = fields.One2many('livestock.thermo', 'farm_id', copy=False)
     #corral_ids = fields.One2many('livestock.corral', 'can_id', copy=False)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable farm record")
+
