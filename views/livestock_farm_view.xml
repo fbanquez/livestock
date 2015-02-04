@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_farm_action" model="ir.actions.act_window">
+            <field name="name">Farm</field>
+            <field name="res_model">livestock.farm</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to farm option -->
+        <menuitem id="livestock_facilities_submenu" parent="livestock_menu" name="Livestock Facilities"/>
+        <menuitem id="livestock_farm_submenu_action" parent="livestock_facilities_submenu" name="Farm" action="livestock_farm_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_farm_tree" model="ir.ui.view">
+            <field name="name">livestock.farm.tree</field>
+            <field name="model">livestock.farm</field>
+            <field name="arch" type="xml">
+                <tree string="Farm Tree">
+                    <field name="key"/>
+                    <field name="vat"/>
+                    <field name="name"/>
+                    <field name="owner"/>
+                    <field name="production"/>
+                    <field name="hectares"/>
+                    <field name="corrals"/>
+                    <field name="grass_area"/>
+                    <field name="bush_area"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_farm_form" model="ir.ui.view">
+            <field name="name">livestock.farm.form</field>
+            <field name="model">livestock.farm</field>
+            <field name="arch" type="xml">
+                <form string="Farm Form">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <separator colspan="4" string="Farm Information"/>
+                            <field name="key"/>
+                            <field name="name"/>
+                            <field name="vat"/>
+                            <label for="street" string="Address"/>
+                                <div>
+                                    <field name="street" placeholder="Street..."/>
+                                    <field name="street2"/>
+                                    <div>
+                                        <field name="city" placeholder="City" style="width: 40%%"/>
+                                        <field name="state_id" class="oe_no_button" placeholder="State" on_change="onchange_state(state_id)" style="width: 24%%" options='{"no_open": True}'/>
+                                        <field name="zip" placeholder="ZIP" style="width: 34%%"/>
+                                    </div>
+                                    <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' on_change="on_change_country(country_id)"/>
+                                </div>
+                            <field name="owner"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="breeder_id"/>
+                                <field name="breeder_name"/>
+                                <field name="production"/>
+                            </group>
+                            <group>
+                                <field name="hectares"/>
+                                <field name="corrals"/>
+                                <field name="grass_area"/>
+                                <field name="bush_area"/>
+                            </group>
+                            <group>
+                                <field name="grass_prevalent"/>
+                            </group>
+                            <group>
+                                <field name="bush_prevalent"/>
+                            </group>
+                            <group>
+                                <field name="map_farm"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <!--page string="Corrals">
+                                <field name="corral_ids">
+                                    <tree string="Corrals into farm">
+                                        <field name="key"/>
+                                        <field name="name"/>
+                                        <field name="color"/>
+                                        <field name="types"/>
+                                        <field name="created_date"/>
+                                        <field name="contents"/>
+                                        <field name="responsible"/>
+                                    </tree>
+                                </field>
+                            </page-->
+                            <page string="Thermos">
+                                <field name="thermo_ids">
+                                    <tree string="Thermo nitrogen measurement">
+                                        <field name="name"/>
+                                        <field name="created_date"/>
+                                        <field name="capacity"/>
+                                        <field name="purpose"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
