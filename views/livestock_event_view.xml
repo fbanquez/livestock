@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_event_action" model="ir.actions.act_window">
+            <field name="name">Event</field>
+            <field name="res_model">livestock.event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to event option -->
+        <menuitem id="livestock_event_submenu" parent="livestock_menu" name="Events"/>
+        <menuitem id="livestock_event_submenu_action" parent="livestock_event_submenu" name="Other Events" action="livestock_event_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_event_tree" model="ir.ui.view">
+            <field name="name">livestock.event.tree</field>
+            <field name="model">livestock.event</field>
+            <field name="arch" type="xml">
+                <tree string="Event Tree">
+                    <field name="name"/>
+                    <field name="event_type"/>
+                    <field name="created_date"/>
+                    <field name="responsible"/>
+                    <!--field name="animal_id"/-->
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_event_form" model="ir.ui.view">
+            <field name="name">livestock.event.form</field>
+            <field name="model">livestock.event</field>
+            <field name="arch" type="xml">
+                <form string="Event Form">
+                    <sheet>
+                        <group col="4">
+                            <separator colspan="4" string="Other Events Information"/>
+                            <group col="2">
+                                <field name="name"/>
+                                <field name="created_date"/>
+                                <!--field name="animal_id"/-->
+                                <field name="event_type"/>
+                                <field name="description"/>
+                                <field name="responsible"/>
+                                <field name="active"/>
+                            </group>
+                            <group col="2">
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

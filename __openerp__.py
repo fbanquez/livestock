@@ -34,6 +34,7 @@
         'views/livestock_thermo_view.xml',
         'views/livestock_corral_view.xml',
         'views/livestock_farm_view.xml',
+        'views/livestock_event_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

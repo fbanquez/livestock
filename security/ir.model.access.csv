@@ -5,3 +5,4 @@ access_livestock_thermo,livestock.thermo,model_livestock_thermo,,1,0,0,0
 access_livestock_thermo_event,livestock.thermo.event,model_livestock_thermo_event,,1,0,0,0
 access_livestock_corral,livestock.corral,model_livestock_corral,,1,0,0,0
 access_livestock_farm,livestock.farm,model_livestock_farm,,1,0,0,0
+access_livestock_event,livestock.event,model_livestock_event,,1,0,0,0
