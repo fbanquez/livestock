@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_corral_action" model="ir.actions.act_window">
+            <field name="name">Corral</field>
+            <field name="res_model">livestock.corral</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to corral option -->
+        <menuitem id="livestock_facilities_submenu" parent="livestock_menu" name="Livestock Facilities"/>
+        <menuitem id="livestock_corral_submenu_action" parent="livestock_facilities_submenu" name="Corral" action="livestock_corral_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_corral_tree" model="ir.ui.view">
+            <field name="name">livestock.corral.tree</field>
+            <field name="model">livestock.corral</field>
+            <field name="arch" type="xml">
+                <tree string="Corral Tree">
+                    <field name="key"/>
+                    <field name="name"/>
+                    <field name="purpose"/>
+                    <field name="hectares"/>
+                    <field name="topography"/>
+                    <field name="drinking_water"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_corral_form" model="ir.ui.view">
+            <field name="name">livestock.corral.form</field>
+            <field name="model">livestock.corral</field>
+            <field name="arch" type="xml">
+                <form string="Corral Form">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <separator colspan="4" string="Corral Information"/>
+                            <field name="key"/>
+                            <field name="name"/>
+                            <field name="farm_id"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="purpose"/>
+                                <field name="hectares"/>
+                                <field name="topography"/>
+                                <field name="drinking_water"/>
+                            </group>
+                            <group>
+                            </group>
+                            <group>
+                                <field name="grass_prevalent"/>
+                            </group>
+                            <group>
+                                <field name="bush_prevalent"/>
+                            </group>
+                            <group colspan="2" col="2">
+                                <field name="observation"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <!--page string="Animals">
+                                    <field name="animal_ids">
+                                        <tree string="Animals into corral">
+                                            <field name="name"/>
+                                            <field name="appellation"/>
+                                            <field name="color"/>
+                                            <field name="types"/>
+                                            <field name="created_date"/>
+                                            <field name="contents"/>
+                                            <field name="responsible"/>
+                                        </tree>
+                                    </field>
+                            </page-->
+                        </notebook>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

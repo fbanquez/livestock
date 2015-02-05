@@ -90,19 +90,18 @@
                             </group>
                         </group>
                         <notebook>
-                            <!--page string="Corrals">
+                            <page string="Corrals">
                                 <field name="corral_ids">
                                     <tree string="Corrals into farm">
                                         <field name="key"/>
                                         <field name="name"/>
-                                        <field name="color"/>
-                                        <field name="types"/>
-                                        <field name="created_date"/>
-                                        <field name="contents"/>
-                                        <field name="responsible"/>
+                                        <field name="purpose"/>
+                                        <field name="hectares"/>
+                                        <field name="topography"/>
+                                        <field name="drinking_water"/>
                                     </tree>
                                 </field>
-                            </page-->
+                            </page>
                             <page string="Thermos">
                                 <field name="thermo_ids">
                                     <tree string="Thermo nitrogen measurement">

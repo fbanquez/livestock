@@ -29,6 +29,6 @@ class livestock_farm(models.Model):
     bush_prevalent = fields.Text(string='Bush Prevalent', required=False, help="Indicates the kind of dominant bush on the farm")
     map_farm = fields.Char(string='Farm Map', required=False, help="Map of the farm")
     thermo_ids = fields.One2many('livestock.thermo', 'farm_id', copy=False)
-    #corral_ids = fields.One2many('livestock.corral', 'can_id', copy=False)
+    corral_ids = fields.One2many('livestock.corral', 'farm_id', copy=False)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable farm record")
 

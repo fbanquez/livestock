@@ -20,7 +20,10 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'stock',
+    ],
 
     # always loaded
     'data': [
@@ -29,6 +32,7 @@
         'views/livestock_embryo_view.xml',
         'views/livestock_straw_view.xml',
         'views/livestock_thermo_view.xml',
+        'views/livestock_corral_view.xml',
         'views/livestock_farm_view.xml',
     ],
     # only loaded in demonstration mode
