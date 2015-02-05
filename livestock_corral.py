@@ -13,7 +13,6 @@ class livestock_corral(models.Model):
         return(('breeding', "Breeding"),
                ('fattening', "Fattening"),
                ('mating', "Mating"),
-               ('fattening', "Fattening"),
                ('milking', "Milking"),
                ('rest', "Male Rest"))
 
@@ -40,7 +39,7 @@ class livestock_corral(models.Model):
     bush_prevalent = fields.Text(string='Bush Prevalent', required=False, help="Iindicates the kind of dominant bush on the corral")
     drinking_water = fields.Selection(string='Drinking Water', selection=_water_corral_selection, required=True, help="Source of water available in the corral")
     observation = fields.Text(string='Observation', required=False, help="Observations of corral")
-    farm_id = fields.Many2one('livestock.farm', string='Farm', ondelete='cascade', index=True)
+    farm_id = fields.Many2one('livestock.farm', string='Farm', required=True, ondelete='cascade', index=True)
     #animal_ids = fields.One2many('livestock.animal', 'corral_id', copy=False)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable corral record")
 
