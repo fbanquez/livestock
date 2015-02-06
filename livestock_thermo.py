@@ -64,13 +64,12 @@ class livestock_thermo(models.Model):
     shelves = fields.Integer(string='Shelves', required=True, help="Numbers of shelves into the rack's thermo")
     created_date = fields.Date(string='Created', default=datetime.now(), required=True, help="Effective date of the thermo first use")
     purpose = fields.Selection(string='Purpose', selection=_purpose_thermo_selection, required=True, help="Thermo purpose. Store embryos or semen")
-    farm = fields.Char(string='Farm', size=25, required=True, help="Farm where thermo was created")
     straws_ids = fields.One2many('livestock.straw', 'thermo_id', string=None, copy=False)
     last_measure = fields.Integer(string='Last Measure', copy=False, readonly=True, compute='_measure_compute_date', help="Days since the last measurement of nitrogen")
     last_refill = fields.Integer(string='Last Refill', copy=False, readonly=True, compute='_refill_compute_date', help="Days since last refill of nitrogen")
     measure_ids = fields.One2many('livestock.thermo.event', 'can_id', copy=False, domain=[('event_type','=','measure')])
     refill_ids = fields.One2many('livestock.thermo.event', 'can_id', copy=False, domain=[('event_type','=','refill')])
-    farm_id = fields.Many2one('livestock.farm', string='Farm', ondelete='cascade', index=True)
+    farm_id = fields.Many2one('livestock.farm', string='Farm', ondelete='cascade')
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable thermo record")
 
 
