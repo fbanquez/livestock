@@ -8,4 +8,5 @@ access_livestock_farm,livestock.farm,model_livestock_farm,,1,0,0,0
 access_livestock_event,livestock.event,model_livestock_event,,1,0,0,0
 access_livestock_disease,livestock.disease,model_livestock_disease,,1,0,0,0
 access_livestock_sanitary_protocol,livestock.sanitary.protocol,model_livestock_sanitary_protocol,,1,0,0,0
+access_livestock_weighing,livestock.weighing,model_livestock_weighing,,1,0,0,0
 

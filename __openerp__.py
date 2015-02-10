@@ -37,6 +37,7 @@
         'views/livestock_event_view.xml',
         'views/livestock_disease_view.xml',
         'views/livestock_sanitary_protocol_view.xml',
+        'views/livestock_weighing_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
