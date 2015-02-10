@@ -35,6 +35,8 @@
         'views/livestock_corral_view.xml',
         'views/livestock_farm_view.xml',
         'views/livestock_event_view.xml',
+        'views/livestock_disease_view.xml',
+        'views/livestock_sanitary_protocol_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

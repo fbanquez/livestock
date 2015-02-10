@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_disease_action" model="ir.actions.act_window">
+            <field name="name">Disease</field>
+            <field name="res_model">livestock.disease</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to disease option -->
+        <menuitem id="livestock_event_submenu" parent="livestock_menu" name="Events"/>
+        <menuitem id="livestock_disease_submenu_action" parent="livestock_event_submenu" name="Disease" action="livestock_disease_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_disease_tree" model="ir.ui.view">
+            <field name="name">livestock.disease.tree</field>
+            <field name="model">livestock.disease</field>
+            <field name="arch" type="xml">
+                <tree string="Disease Tree">
+                    <field name="name"/>
+                    <field name="diagnostician"/>
+                    <field name="exam"/>
+                    <field name="symptoms"/>
+                    <field name="veterinarian"/>
+                    <field name="created_date"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_disease_form" model="ir.ui.view">
+            <field name="name">livestock.disease.form</field>
+            <field name="model">livestock.disease</field>
+            <field name="arch" type="xml">
+                <form string="Disease Form">
+                    <sheet>
+                        <group col="2">
+                            <group col="2">
+                                <separator colspan="4" string="Disease Information"/>
+                                <field name="name"/>
+                                <field name="diagnostician"/>
+                                <field name="created_date"/>
+                                <field name="veterinarian"/>
+                            </group>
+                            <group col="2">
+                            </group>
+                        </group>
+                        <group col="2">
+                            <field name="symptoms"/>
+                            <field name="exam"/>
+                            <field name="exam_result"/>
+                        </group>
+                        <group col="2">
+                            <field name="treatment"/>
+                            <field name="observation"/>
+                        </group>
+                        <group col="2">
+                            <field name="active"/>
+                        </group>
+                        <notebook>
+                            <page string="Sanitary Protocol">
+                                    <field name="sanitary_protocol_ids">
+                                        <tree string="Treatment for disease">
+                                            <field name="treatment_applier"/>
+                                            <field name="treatment_supervisor"/>
+                                            <field name="treatment_date"/>
+                                            <field name="active"/>
+                                        </tree>
+                                    </field>
+                            </page>
+                        </notebook>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
