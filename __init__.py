@@ -9,4 +9,5 @@ import livestock_corral
 import livestock_event
 import livestock_disease
 import livestock_weighing
+import livestock_nutrition
 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_nutrition_action" model="ir.actions.act_window">
+            <field name="name">Nutrition</field>
+            <field name="res_model">livestock.nutrition</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to nutrition option -->
+        <menuitem id="livestock_event_submenu" parent="livestock_menu" name="Events"/>
+        <menuitem id="livestock_nutrition_submenu_action" parent="livestock_event_submenu" name="Nutrition" action="livestock_nutrition_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_nutrition_tree" model="ir.ui.view">
+            <field name="name">livestock.nutrition.tree</field>
+            <field name="model">livestock.nutrition</field>
+            <field name="arch" type="xml">
+                <tree string="Nutrition Tree">
+                    <field name="name"/>
+                    <field name="supplement_type"/>
+                    <field name="manufacturing_lab"/>
+                    <field name="batch_manufacture"/>
+                    <field name="administration_route"/>
+                    <field name="responsible"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_nutrition_form" model="ir.ui.view">
+            <field name="name">livestock.nutrition.form</field>
+            <field name="model">livestock.nutrition</field>
+            <field name="arch" type="xml">
+                <form string="Nutrition Form">
+                    <sheet>
+                        <group col="4">
+                            <separator colspan="4" string="Nutrition Information"/>
+                            <group col="2">
+                                <field name="name"/>
+                                <field name="supplement_type"/>
+                                <field name="manufacturing_lab"/>
+                                <field name="batch_manufacture"/>
+                                <field name="dosage"/>
+                                <field name="administration_route"/>
+                                <field name="application_frequency"/>
+                                <field name="responsible"/>
+                                <field name="active"/>
+                            </group>
+                            <group col="2">
+                            </group>
+                        </group>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
