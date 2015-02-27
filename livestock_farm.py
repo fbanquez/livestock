@@ -5,7 +5,7 @@ from openerp import models, fields, api
 
 class livestock_farm(models.Model):
     _name = 'livestock.farm'
-    _inherit = 'res.company' 
+    _inherits = {'res.company': 'company_id'} 
     _description = "Livestock Farm model"
     _order = "key desc"
 
@@ -15,7 +15,24 @@ class livestock_farm(models.Model):
                ('commercial', "Commercial Breeding"),
                ('fattening', "Fattening"))
 
+    def on_change_country(self, cr, uid, ids, country_id, context=None):
+        res = {'domain': {'state_id': []}}
+        rate_obj = self.pool.get('res.currency.rate')
+        rate_id = rate_obj.search(cr, uid, [('rate', '=', 1)], context=context)
+        currency_id = rate_id and rate_obj.browse(cr, uid, rate_id[0], context=context).currency_id.id or False
+        if country_id:
+            currency_id = self.pool.get('res.country').browse(cr, uid, country_id, context=context).currency_id.id
+            res['domain'] = {'state_id': [('country_id','=',country_id)]}
+        res['value'] = {'currency_id': currency_id}
+        return res
+
+    def onchange_state(self, cr, uid, ids, state_id, context=None):
+        if state_id:
+            return {'value':{'country_id': self.pool.get('res.country.state').browse(cr, uid, state_id, context).country_id.id }}
+        return {}
+
     # Fields of the Farm Model
+    company_id = fields.Many2one('res.company', string='Company', ondelete='restrict', required=True)
     key =  fields.Char(string='Identifier', size=8, required=True, help="Identifier of the farm")
     owner = fields.Char(string='Owner', size=25, help="Owner of the farm")
     breeder_id = fields.Char(string='Breeder Id', size=8, help="Identifier of the breeder")
