@@ -31,6 +31,6 @@ class livestock_nutrition(models.Model):
     application_frequency = fields.Char(string='Application Frequency', size=25, required=True, help="Frequency at which the nutritional supplement should be dispensed")
     responsible = fields.Char(string='Responsible', required=True, size=30, default=lambda self: self.env.user.name, help="Person administering the supplement")
     #created_date = fields.Datetime(string='Date', required=True, default=datetime.now(), help="Date on which the event occurred")
-    #animal_id = fields.Many2one('livestock.animal', string='Animal', ondelete='cascade', index=True)
+    animal_id = fields.Many2one('livestock.animal', string='Animal', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable nutrition record")
 
