@@ -16,8 +16,9 @@ class livestock_disease(models.Model):
     observation = fields.Text(string='Observations', required=False, help="Observations about the disease")
     symptoms = fields.Text(string='Symptoms', required=True, help="Disease symptoms")
     veterinarian = fields.Char(string='Veterinarian', required=True, help="Attending veterinarian")
-    exam_result = fields.Text(string='Exams Result', required=True, help="Results of the exams")
-    treatment = fields.Text(string='Treatment', required=True, help="Aplied Treatment")   
+    exam_result = fields.Text(string='Exams Result', required=False, help="Results of the exams")
+    treatment = fields.Text(string='Treatment', required=True, help="Aplied Treatment")
+    animal_id = fields.Many2one('livestock.animal', string='Animal', ondelete='cascade', index=True)
     sanitary_protocol_ids = fields.One2many('livestock.sanitary.protocol', 'disease_id', copy = False)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable disease record")
     
