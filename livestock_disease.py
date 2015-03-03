@@ -10,7 +10,7 @@ class livestock_disease(models.Model):
 
     # Fields of the Disease Model
     name =  fields.Char(string='Identifier', size=8, required=True, help="Identifier of the disease")
-    created_date = fields.Datetime(string= 'Identifier Date', required=True, default = datetime.now(), help = 'Date at which the disease was identified')
+    created_date = fields.Datetime(string= 'Identifier Date', required=True, default=datetime.now(), help = 'Date at which the disease was identified')
     diagnostician = fields.Char(string='Diagnostician', require = True ,size=30, default = lambda self: self.env.user.name, help="Indicates the person who performed the diagnosis")
     exam = fields.Text(string='Medical Exams', required=True, help="Indicates which medical tests should be performed")
     observation = fields.Text(string='Observations', required=False, help="Observations about the disease")

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Action 
+        The following tag is an action definition for a "windows action",
+        that is an action opening a view or a set of views
+        -->
+        <record id="livestock_animal_action" model="ir.actions.act_window">
+            <field name="name">Animal</field>
+            <field name="res_model">livestock.animal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+         </record>
+
+        <!-- Menu -->
+        <!-- top level menu: no parent -->
+        <!--menuitem id="livestock_menu" name= "Livestock"/-->
+        <!-- a first level in the left side menu is needed before using action = attribute -->
+        <!-- This menu action belong to animal option -->
+        <menuitem id="livestock_livestock_submenu" parent="livestock_menu" name="Livestock"/>
+        <menuitem id="livestock_animal_submenu_action" parent="livestock_livestock_submenu" name="Animals" action="livestock_animal_action"/>
+
+        <!-- Tree View -->
+        <record id="livestock_animal_tree" model="ir.ui.view">
+            <field name="name">livestock.animal.tree</field>
+            <field name="model">livestock.animal</field>
+            <field name="arch" type="xml">
+                <tree string="Animal Tree">
+                    <field name="default_code" string="Identifier"/>
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="species"/>
+                    <field name="race"/>
+                    <field name="born_date"/>
+                    <field name="registration"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="livestock_animal_form" model="ir.ui.view">
+            <field name="name">livestock.animal.form</field>
+            <field name="model">livestock.animal</field>
+            <field name="arch" type="xml">
+                <form string="Animal Form">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <separator colspan="2" string="Animal Information"/>
+                            <group>
+                                <field name="default_code" string="Identifier" attrs="{'required':True}"/>
+                                <field name="name"/>
+                                <field name="species"/>
+                                <field name="race"/>
+                                <field name="category"/>
+                                <field name="registration"/>
+                                <field name="gender"/>
+                                <field name="repro_stage"/>
+                            </group>
+                            <!--group>
+                                <field name="image"/>
+                            </group-->
+                        </group>
+                        <group>
+                            <field name="female_parent_id"/>
+                            <field name="male_parent_id"/>
+                            <field name="born_date"/>
+                            <label for="birth_weight"/><div><field name="birth_weight" class="oe_inline"/> kg</div>
+                            <field name="labour_type"/>
+                            <field name="gestation"/>
+                            <field name="biotech" attrs="{'invisible':[('gestation', '!=', 'biotechnology')]}"/>
+                            <field name="corral_id"/>
+                        </group>
+                        <group>
+                        </group>
+                        <group>
+                            <field name="description" string="Observation"/>
+                            <field name="active"/>
+                        </group>
+                        <notebook>
+                            <page string="Diseases">
+                                <field name="disease_ids">
+                                    <tree string="Animal disease">
+                                        <field name="name"/>
+                                        <field name="diagnostician"/>
+                                        <field name="exam"/>
+                                        <field name="symptoms"/>
+                                        <field name="veterinarian"/>
+                                        <field name="created_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Nutririon">
+                                <field name="nutrition_ids">
+                                    <tree string="Animal nutrition">
+                                        <field name="name"/>
+                                        <field name="supplement_type"/>
+                                        <field name="manufacturing_lab"/>
+                                        <field name="batch_manufacture"/>
+                                        <field name="administration_route"/>
+                                        <field name="responsible"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Weighing">
+                                <field name="weighing_ids">
+                                    <tree string="Animal weighing">
+                                        <field name="created_date"/>
+                                        <field name="current_weight"/>
+                                        <field name="daily_gain"/>
+                                        <field name="life_gain"/>
+                                        <field name="projecting_days"/>
+                                        <field name="adjusted_weight"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Other Events">
+                                <field name="event_ids">
+                                    <tree string="Animal events">
+                                        <field name="name"/>
+                                        <field name="event_type"/>
+                                        <field name="created_date"/>
+                                        <field name="responsible"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>                    
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

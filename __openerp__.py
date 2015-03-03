@@ -32,6 +32,7 @@
         'views/livestock_embryo_view.xml',
         'views/livestock_straw_view.xml',
         'views/livestock_thermo_view.xml',
+        'views/livestock_animal_view.xml',
         'views/livestock_corral_view.xml',
         'views/livestock_farm_view.xml',
         'views/livestock_event_view.xml',

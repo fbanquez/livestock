@@ -54,7 +54,7 @@
                         </group>
                         <group>
                             <group>
-                                <field name="capacity"/>
+                                <label for="capacity"/><div><field name="capacity" class="oe_inline"/> Lts</div>
                                 <field name="racks"/>
                                 <field name="shelves"/>
                             </group>

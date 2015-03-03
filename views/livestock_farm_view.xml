@@ -18,7 +18,7 @@
         <!--menuitem id="livestock_menu" name= "Livestock"/-->
         <!-- a first level in the left side menu is needed before using action = attribute -->
         <!-- This menu action belong to farm option -->
-        <menuitem id="livestock_facilities_submenu" parent="livestock_menu" name="Livestock Facilities"/>
+        <menuitem id="livestock_facilities_submenu" parent="livestock_menu" name="Facilities"/>
         <menuitem id="livestock_farm_submenu_action" parent="livestock_facilities_submenu" name="Farm" action="livestock_farm_action"/>
 
         <!-- Tree View -->
@@ -51,7 +51,7 @@
                         <group colspan="2" col="2">
                             <separator colspan="4" string="Farm Information"/>
                             <field name="key"/>
-                            <field name="name"/>
+                            <field name="name" string="Name"/>
                             <field name="vat"/>
                             <label for="street" string="Address"/>
                                 <div>
@@ -73,10 +73,10 @@
                                 <field name="production"/>
                             </group>
                             <group>
-                                <field name="hectares"/>
+                                <label for="hectares"/><div><field name="hectares" class="oe_inline"/> ha</div>
                                 <field name="corrals"/>
-                                <field name="grass_area"/>
-                                <field name="bush_area"/>
+                                <label for="grass_area"/><div><field name="grass_area" class="oe_inline"/> %</div>
+                                <label for="bush_area"/><div><field name="bush_area" class="oe_inline"/> %</div>
                             </group>
                             <group>
                                 <field name="grass_prevalent"/>
@@ -93,7 +93,7 @@
                             <page string="Corrals">
                                 <field name="corral_ids">
                                     <tree string="Corrals into farm">
-                                        <field name="key"/>
+                                        <field name="code"/>
                                         <field name="name"/>
                                         <field name="purpose"/>
                                         <field name="hectares"/>

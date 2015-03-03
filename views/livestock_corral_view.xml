@@ -18,7 +18,7 @@
         <!--menuitem id="livestock_menu" name= "Livestock"/-->
         <!-- a first level in the left side menu is needed before using action = attribute -->
         <!-- This menu action belong to corral option -->
-        <menuitem id="livestock_facilities_submenu" parent="livestock_menu" name="Livestock Facilities"/>
+        <menuitem id="livestock_facilities_submenu" parent="livestock_menu" name="Facilities"/>
         <menuitem id="livestock_corral_submenu_action" parent="livestock_facilities_submenu" name="Corral" action="livestock_corral_action"/>
 
         <!-- Tree View -->
@@ -27,7 +27,7 @@
             <field name="model">livestock.corral</field>
             <field name="arch" type="xml">
                 <tree string="Corral Tree">
-                    <field name="key"/>
+                    <field name="code"/>
                     <field name="name"/>
                     <field name="purpose"/>
                     <field name="hectares"/>
@@ -47,15 +47,14 @@
                     <sheet>
                         <group colspan="2" col="2">
                             <separator colspan="4" string="Corral Information"/>
-                            <field name="key"/>
+                            <field name="code"/>
                             <field name="name"/>
                             <field name="farm_id"/>
-                            <field name="active"/>
                         </group>
                         <group>
                             <group>
                                 <field name="purpose"/>
-                                <field name="hectares"/>
+                                <label for="hectares"/><div><field name="hectares" class="oe_inline"/> ha</div>
                                 <field name="topography"/>
                                 <field name="drinking_water"/>
                             </group>
@@ -69,22 +68,21 @@
                             </group>
                             <group colspan="2" col="2">
                                 <field name="observation"/>
+                                <field name="active"/>
                             </group>
                         </group>
                         <notebook>
-                            <!--page string="Animals">
+                            <page string="Animals">
                                     <field name="animal_ids">
                                         <tree string="Animals into corral">
                                             <field name="name"/>
-                                            <field name="appellation"/>
-                                            <field name="color"/>
-                                            <field name="types"/>
-                                            <field name="created_date"/>
-                                            <field name="contents"/>
-                                            <field name="responsible"/>
+                                            <field name="race"/>
+                                            <field name="registration"/>
+                                            <field name="gender"/>
+                                            <field name="born_date"/>
                                         </tree>
                                     </field>
-                            </page-->
+                            </page>
                         </notebook>
                     </sheet>                    
                 </form>

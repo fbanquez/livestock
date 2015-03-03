@@ -5,9 +5,9 @@ from openerp import models, fields, api
 
 class livestock_corral(models.Model):
     _name = 'livestock.corral'
-    _inherit = 'stock.warehouse' 
+    _inherits = {'stock.warehouse': 'wharehouse_id'} 
     _description = "Livestock Corral model"
-    _order = "key desc"
+    _order = "wharehouse_id desc"
 
     def _purpose_corral_selection(self):
         return(('breeding', "Breeding"),
@@ -30,8 +30,9 @@ class livestock_corral(models.Model):
                ('other', "Other"))
 
     # Fields of the Corral Model
-    key =  fields.Char(string='Identifier', size=8, required=True, help="Identifier of the corral")
-    name = fields.Char(string='Name', size=25, required=True, select=True, help="Corral Name")
+    wharehouse_id = fields.Many2one('stock.warehouse', string='Warehouse', required=True, ondelete='cascade', select=True, auto_join=True)
+    #key =  fields.Char(string='Identifier', size=8, required=True, help="Identifier of the corral")
+    #name = fields.Char(string='Name', size=25, required=True, select=True, help="Corral Name")
     purpose = fields.Selection(string='Purpose', selection=_purpose_corral_selection, required=True, help="Indicates the use that will give the corral")
     hectares = fields.Float(string='Hectares', digits=(7, 2), required=True, help="Number of acres comprising the corral")
     topography = fields.Selection(string='Topography', selection=_topography_corral_selection, required=True, help="Indicates the use that will give the corral")
@@ -40,6 +41,6 @@ class livestock_corral(models.Model):
     drinking_water = fields.Selection(string='Drinking Water', selection=_water_corral_selection, required=True, help="Source of water available in the corral")
     observation = fields.Text(string='Observation', required=False, help="Observations of corral")
     farm_id = fields.Many2one('livestock.farm', string='Farm', required=True, ondelete='cascade', index=True)
-    #animal_ids = fields.One2many('livestock.animal', 'corral_id', copy=False)
+    animal_ids = fields.One2many('livestock.animal', 'corral_id', copy=False)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable corral record")
 

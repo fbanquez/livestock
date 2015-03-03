@@ -54,6 +54,7 @@
                                 <field name="dosage"/>
                                 <field name="administration_route"/>
                                 <field name="application_frequency"/>
+                                <field name="animal_id"/>
                                 <field name="responsible"/>
                                 <field name="active"/>
                             </group>

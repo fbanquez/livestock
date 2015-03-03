@@ -30,7 +30,7 @@ class livestock_thermo(models.Model):
             date_measure = date_today
         else:
             date_measure = datetime.strptime(reg[0], '%Y-%m-%d').date()
-        
+
         diff = date_today - date_measure
         self.last_measure = diff.days
 

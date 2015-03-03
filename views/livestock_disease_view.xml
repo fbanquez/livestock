@@ -52,6 +52,7 @@
                                 <field name="diagnostician"/>
                                 <field name="created_date"/>
                                 <field name="veterinarian"/>
+                                <field name="animal_id"/>
                             </group>
                             <group col="2">
                             </group>

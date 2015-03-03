@@ -50,21 +50,21 @@
                             <separator colspan="2" string="Weighing Information"/>
                             <group col="2">
                                 <field name="name"/>
-                                <!--field name="animal_id"/-->
                                 <field name="created_date"/>
-                                <field name="current_weight"/>
+                                <label for="current_weight"/><div><field name="current_weight" class="oe_inline"/> kg</div>
                                 <field name="responsible"/>
+                                <field name="animal_id"/>
                             </group>
                             <group col="2">
                             </group>
                             <group col="2">
                                 <group col="2">
-                                    <field name="daily_gain"/>
-                                    <field name="life_gain"/>
+                                    <label for="daily_gain"/><div><field name="daily_gain" class="oe_inline"/> g</div>
+                                    <label for="life_gain"/><div><field name="life_gain" class="oe_inline"/> g</div>
                                 </group>
                                 <group col="2">
                                     <field name="projecting_days"/>
-                                    <field name="adjusted_weight"/>
+                                    <label for="adjusted_weight"/><div><field name="adjusted_weight" class="oe_inline"/> kg</div>
                                 </group>
                             </group>
                             <group col="2">
