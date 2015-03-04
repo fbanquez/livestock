@@ -11,4 +11,5 @@ import livestock_disease
 import livestock_weighing
 import livestock_nutrition
 import livestock_animal
-
+import livestock_race_category_animal
+import livestock_color_animal

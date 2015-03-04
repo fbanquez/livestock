@@ -13,7 +13,7 @@ class livestock_weighing(models.Model):
     def _daily_gain_compute(self):
         self.daily_gain = 0.00
         if self.animal_id.id:
-            self.env.cr.execute("SELECT created_date, current_weight FROM livestock_weighing WHERE animal_id = %s ORDER BY created_date desc" % (self.animal_id.id))
+            self.env.cr.execute("SELECT created_date, current_weight FROM livestock_weighing WHERE animal_id = %s AND active ORDER BY created_date desc" % (self.animal_id.id))
             reg = self.env.cr.fetchall()
             if len(reg) > 1:
                 diff = datetime.strptime(reg[1][0], '%Y-%m-%d %H:%M:%S') - datetime.strptime(reg[0][0], '%Y-%m-%d %H:%M:%S')

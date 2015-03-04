@@ -31,8 +31,6 @@ class livestock_corral(models.Model):
 
     # Fields of the Corral Model
     wharehouse_id = fields.Many2one('stock.warehouse', string='Warehouse', required=True, ondelete='cascade', select=True, auto_join=True)
-    #key =  fields.Char(string='Identifier', size=8, required=True, help="Identifier of the corral")
-    #name = fields.Char(string='Name', size=25, required=True, select=True, help="Corral Name")
     purpose = fields.Selection(string='Purpose', selection=_purpose_corral_selection, required=True, help="Indicates the use that will give the corral")
     hectares = fields.Float(string='Hectares', digits=(7, 2), required=True, help="Number of acres comprising the corral")
     topography = fields.Selection(string='Topography', selection=_topography_corral_selection, required=True, help="Indicates the use that will give the corral")

@@ -40,6 +40,8 @@
         'views/livestock_sanitary_protocol_view.xml',
         'views/livestock_weighing_view.xml',
         'views/livestock_nutrition_view.xml',
+        'views/livestock_race_category_animal_view.xml',
+        'views/livestock_color_animal_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
