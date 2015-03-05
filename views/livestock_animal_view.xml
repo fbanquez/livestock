@@ -59,27 +59,32 @@
                                 <field name="registration"/>
                                 <field name="gender"/>
                                 <field name="repro_stage"/>
+                                <field name="purchased"/>
                             </group>
-                            <!--group>
-                                <field name="image"/>
-                            </group-->
+                            <group>
+                                <field name="image_medium" widget="image" nolabel="1" class="oe_right"/>
+                            </group>
                         </group>
-                        <group>
-                            <field name="female_parent_id"/>
-                            <field name="male_parent_id"/>
-                            <field name="born_date"/>
-                            <label for="birth_weight"/><div><field name="birth_weight" class="oe_inline"/> kg</div>
-                            <field name="labour_type"/>
-                            <field name="gestation"/>
-                            <field name="biotech" attrs="{'invisible':[('gestation', '!=', 'biotechnology')]}"/>
-                            <field name="corral_id"/>
-                        </group>
-                        <group>
-                        </group>
-                        <group>
-                            <field name="description" string="Observation"/>
-                            <field name="sick"/>
-                            <field name="active"/>
+                        <group colspan="2" col="2">
+                            <group>
+                                <field name="female_parent_id"/>
+                                <field name="male_parent_id"/>
+                                <field name="born_date"/>
+                                <label for="birth_weight"/><div><field name="birth_weight" class="oe_inline"/> kg</div>
+                                <field name="labour_type"/>
+                                <field name="gestation"/>
+                                <field name="biotech" attrs="{'invisible':[('gestation', '!=', 'biotechnology')]}"/>
+                                <field name="corral_id"/>
+                                <field name="description" string="Observation"/>
+                                <field name="sick"/>
+                                <field name="active"/>
+                            </group>
+                            <group attrs="{'invisible':[('purchased', '!=', True)]}">
+                                <field name="breeder"/>
+                                <label for="raised"/><div><field name="raised" class="oe_inline"/> m</div>
+                                <field name="condition"/>
+                                <field name="features"/>
+                            </group>
                         </group>
                         <notebook>
                             <page string="Diseases">

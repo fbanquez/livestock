@@ -38,10 +38,13 @@ class livestock_animal(models.Model):
             AND active ORDER BY color"""
             self.env.cr.execute(query, (self.race))
         else:
-            query = """SELECT color FROM livestock_color_animal WHERE active
+            query = """SELECT distinct(color) FROM livestock_color_animal WHERE active
             ORDER BY color"""
             self.env.cr.execute(query)
         return [(row[0], row[0]) for row in self.env.cr.fetchall()]
+
+    def _condition_animal_selection(self):
+        return [(str(n), str(n)) for n in range(1, 10)]
 
     @api.one
     @api.depends('born_date')
@@ -95,7 +98,14 @@ class livestock_animal(models.Model):
     birth_weight = fields.Float(string='Birth Weight', digits=(4, 2), required=True, help="Animal birth weight")
     born_date = fields.Date(string='Born Date', default=datetime.now(), required=True, help="Date of birth of the animal")
     labour_type = fields.Char(string='Labour Type', size=30, required=True, help="Type of birth of the animal")
+    purchased = fields.Boolean(string='Purchased', default=False, help="Indicates when the animal has been purchased")
     sick = fields.Boolean(string='Sick', default=False, help="Indicates when the animal is sick")
+    #### Hidden fields ####
+    breeder = fields.Char(string='Breeder', size=25, required=False, help="Livestock breeder")
+    raised = fields.Integer(string='Raised', required=False, help="Height of livestock considered from the heel of the front legs to the cross")
+    condition = fields.Selection(string='Condition', selection=_condition_animal_selection, required=False, help="Body condition of animal")
+    features = fields.Text(string='Features', required=False, help="Special features of the animal")
+    ####     #####     ####
     corral_id = fields.Many2one('livestock.corral', string='Corral', ondelete='set null', index=True)
     female_parent_id = fields.Many2one('livestock.animal', string='Mother', ondelete='set null', index=True)
     male_parent_id = fields.Many2one('livestock.animal', string='Father', ondelete='set null', index=True)
