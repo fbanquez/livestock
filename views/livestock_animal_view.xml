@@ -114,7 +114,7 @@
                             <page string="Weighing">
                                 <field name="weighing_ids">
                                     <tree string="Animal weighing">
-                                        <field name="created_date"/>
+                                        <field name="weighing_date"/>
                                         <field name="current_weight"/>
                                         <field name="daily_gain"/>
                                         <field name="life_gain"/>

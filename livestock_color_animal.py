@@ -20,7 +20,7 @@ class livestock_color_animal(models.Model):
         return [(row[0], row[0]) for row in self.env.cr.fetchall()]
 
     # Fields of the Configuration Animal Model
-    race = fields.Selection(string='Race',  selection=_race_color_selection, index=True, help="Type of breed")
+    race = fields.Selection(string='Race', required=True,  selection=_race_color_selection, index=True, help="Type of breed")
     color = fields.Char(string='Colour', index=True, required=True, help="Animal colour")
     description = fields.Text(string='Description', size=500, help="Long description of the animal characteristic")
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable features record")

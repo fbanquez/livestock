@@ -27,8 +27,8 @@
             <field name="model">livestock.weighing</field>
             <field name="arch" type="xml">
                 <tree string="Weighing Tree">
-                    <field name="created_date"/>
-                    <field name="name"/>
+                    <field name="animal_id"/>
+                    <field name="weighing_date"/>
                     <field name="current_weight"/>
                     <field name="daily_gain"/>
                     <field name="life_gain"/>
@@ -50,7 +50,7 @@
                             <separator colspan="2" string="Weighing Information"/>
                             <group col="2">
                                 <field name="name"/>
-                                <field name="created_date"/>
+                                <field name="weighing_date"/>
                                 <label for="current_weight"/><div><field name="current_weight" class="oe_inline"/> kg</div>
                                 <field name="responsible"/>
                                 <field name="animal_id"/>
