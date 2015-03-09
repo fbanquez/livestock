@@ -1,0 +1,1678 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* livestock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150302\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-08 22:42+0000\n"
+"PO-Revision-Date: 2015-03-08 22:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: livestock
+#: field:livestock.color.animal,active:0
+#: field:livestock.corral,active:0
+#: field:livestock.disease,active:0
+#: field:livestock.embryo,active:0
+#: field:livestock.event,active:0
+#: field:livestock.farm,active:0
+#: field:livestock.nutrition,active:0
+#: field:livestock.race.category.animal,active:0
+#: field:livestock.sanitary.protocol,active:0
+#: field:livestock.straw,active:0
+#: field:livestock.thermo,active:0
+#: field:livestock.weighing,active:0
+msgid "Active"
+msgstr "Activo"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "Address"
+msgstr "Dirección"
+
+#. module: livestock
+#: field:livestock.nutrition,administration_route:0
+msgid "Administration Routes"
+msgstr "Vías de Administración"
+
+#. module: livestock
+#: help:livestock.embryo,name:0
+msgid "Alphanumeric identifier embryo"
+msgstr "Identificador alfanumérico del embrión"
+
+#. module: livestock
+#: field:livestock.thermo.event,nitrogen_amount:0
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_animal_action
+#: field:livestock.disease,animal_id:0
+#: field:livestock.event,animal_id:0
+#: field:livestock.nutrition,animal_id:0
+#: field:livestock.weighing,animal_id:0
+msgid "Animal"
+msgstr "Animal"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Animal Form"
+msgstr "Form de Animal"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Animal Information"
+msgstr "Información del Animal"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_tree
+msgid "Animal Tree"
+msgstr "LIsta de Animal"
+
+#. module: livestock
+#: help:livestock.animal,birth_weight:0
+msgid "Animal birth weight"
+msgstr "Peso al nacer el animal"
+
+#. module: livestock
+#: help:livestock.animal,category:0
+msgid "Animal category"
+msgstr "Categoría del animal"
+
+#. module: livestock
+#: help:livestock.race.category.animal,name:0
+msgid "Animal characteristic"
+msgstr "Característica del animal"
+
+#. module: livestock
+#: help:livestock.color.animal,color:0
+msgid "Animal colour"
+msgstr "Color del animal"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Animal disease"
+msgstr "Enfermedad del animal"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Animal events"
+msgstr "Eventos del animal"
+
+#. module: livestock
+#: help:livestock.animal,gender:0
+msgid "Animal gender"
+msgstr "Sexo del animal"
+
+#. module: livestock
+#: field:livestock.corral,animal_ids:0
+msgid "Animal ids"
+msgstr "Identificadores de animales"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Animal nutrition"
+msgstr "Nutrición del animal"
+
+#. module: livestock
+#: help:livestock.animal,species:0
+msgid "Animal species"
+msgstr "Especie del animal"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Animal weighing"
+msgstr "Peso del animal"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_color_animal_action
+msgid "AnimalColour"
+msgstr "ColorAnimal"
+
+#. module: livestock
+#: view:livestock.color.animal:livestock.livestock_color_animal_form
+msgid "AnimalColour Form"
+msgstr "Form del ColorAnimal"
+
+#. module: livestock
+#: view:livestock.color.animal:livestock.livestock_color_animal_tree
+msgid "AnimalColour Tree"
+msgstr "Lista del ColorAnimal"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_race_category_animal_action
+msgid "AnimalConfig"
+msgstr "ConfiguracionAnimal"
+
+#. module: livestock
+#: view:livestock.race.category.animal:livestock.livestock_race_category_animal_form
+msgid "AnimalConfig Form"
+msgstr "Form de la ConfiguracionAnimal"
+
+#. module: livestock
+#: view:livestock.race.category.animal:livestock.livestock_race_category_animal_tree
+msgid "AnimalConfig Tree"
+msgstr "Lista de la ConfiguracionAnimal"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_animal_submenu_action
+#: view:livestock.corral:livestock.livestock_corral_form
+msgid "Animals"
+msgstr "Animales"
+
+#. module: livestock
+#: view:livestock.corral:livestock.livestock_corral_form
+msgid "Animals into corral"
+msgstr "Animales en el potrero"
+
+#. module: livestock
+#: help:livestock.disease,treatment:0
+msgid "Aplied Treatment"
+msgstr "Tratamiento aplicado"
+
+#. module: livestock
+#: field:livestock.nutrition,application_frequency:0
+msgid "Application Frequency"
+msgstr "Frecuencia de aplicación"
+
+#. module: livestock
+#: help:livestock.disease,veterinarian:0
+msgid "Attending veterinarian"
+msgstr "Veterinario a cargo"
+
+#. module: livestock
+#: view:livestock.embryo:livestock.livestock_embryo_form
+msgid "Basic Information"
+msgstr "Información Básica"
+
+#. module: livestock
+#: help:livestock.nutrition,batch_manufacture:0
+msgid "Batch manufacture of nutritional products"
+msgstr "Lotes de fabricación de los productos nutricionales"
+
+#. module: livestock
+#: help:livestock.embryo,responsible:0
+msgid "Biologist, veterinarian or person responsible for the creation of the embryo"
+msgstr "Biólogo, veterinario o persona responsable de la creación del embrión"
+
+#. module: livestock
+#: help:livestock.straw,responsible:0
+msgid "Biologist, veterinarian or person responsible for the creation of the straw"
+msgstr "Biólogo, veterinario o persona responsable de la creación de la pajilla"
+
+#. module: livestock
+#: field:livestock.animal,biotech:0
+msgid "Biotechnology"
+msgstr "Biotecnología"
+
+#. module: livestock
+#: field:livestock.animal,birth_weight:0
+msgid "Birth Weight"
+msgstr "Peso de nacimiento"
+
+#. module: livestock
+#: help:livestock.animal,condition:0
+msgid "Body condition of animal"
+msgstr "Condición corporal del animal"
+
+#. module: livestock
+#: field:livestock.animal,born_date:0
+msgid "Born Date"
+msgstr "Fecha de nacimiento"
+
+#. module: livestock
+#: help:livestock.animal,race:0
+msgid "Breed of animal"
+msgstr "Raza del animal"
+
+#. module: livestock
+#: field:livestock.animal,breeder:0
+msgid "Breeder"
+msgstr "Criador"
+
+#. module: livestock
+#: field:livestock.farm,breeder_id:0
+msgid "Breeder Id"
+msgstr "Identificación del criador"
+
+#. module: livestock
+#: field:livestock.farm,breeder_name:0
+msgid "Breeder Name"
+msgstr "Nombre del criador"
+
+#. module: livestock
+#: field:livestock.farm,bush_area:0
+msgid "Bush Area"
+msgstr "Area de malezas"
+
+#. module: livestock
+#: field:livestock.corral,bush_prevalent:0
+#: field:livestock.farm,bush_prevalent:0
+msgid "Bush Prevalent"
+msgstr "Maleza predominante"
+
+#. module: livestock
+#: field:livestock.thermo,capacity:0
+msgid "Capacity"
+msgstr "Capacidad"
+
+#. module: livestock
+#: field:livestock.animal,category:0
+msgid "Category"
+msgstr "Categoría"
+
+#. module: livestock
+#: field:livestock.thermo,characteristics:0
+msgid "Characteristics"
+msgstr "Características"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "City"
+msgstr "Ciudad"
+
+#. module: livestock
+#: field:livestock.straw,color:0
+msgid "Color"
+msgstr "Color"
+
+#. module: livestock
+#: help:livestock.animal,colour:0
+msgid "Color of animal"
+msgstr "Color del animal"
+
+#. module: livestock
+#: help:livestock.straw,color:0
+msgid "Color of the straw"
+msgstr "Color de la pajilla"
+
+#. module: livestock
+#: field:livestock.animal,colour:0
+#: field:livestock.color.animal,color:0
+msgid "Colour"
+msgstr "Color"
+
+#. module: livestock
+#: view:livestock.color.animal:livestock.livestock_color_animal_form
+msgid "Colours Animals"
+msgstr "Colores de los animales"
+
+#. module: livestock
+#: field:livestock.weighing,comment:0
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: livestock
+#: help:livestock.weighing,comment:0
+msgid "Comments about weighing the animal"
+msgstr "Comentarios sobre el peso del animal"
+
+#. module: livestock
+#: field:livestock.farm,company_id:0
+msgid "Company"
+msgstr "Finca"
+
+#. module: livestock
+#: view:livestock.embryo:livestock.livestock_embryo_form
+msgid "Complementary Information"
+msgstr "Información Complementaria"
+
+#. module: livestock
+#: field:livestock.animal,condition:0
+msgid "Condition"
+msgstr "Condición"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_configure_submenu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: livestock
+#: help:livestock.straw,contents:0
+msgid "Content of a straw"
+msgstr "Contenido de la pajilla"
+
+#. module: livestock
+#: field:livestock.straw,contents:0
+msgid "Contents"
+msgstr "Contenido"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_corral_action
+#: model:ir.ui.menu,name:livestock.livestock_corral_submenu_action
+#: field:livestock.animal,corral_id:0
+msgid "Corral"
+msgstr "Potrero"
+
+#. module: livestock
+#: view:livestock.corral:livestock.livestock_corral_form
+msgid "Corral Form"
+msgstr "Form del Potrero"
+
+#. module: livestock
+#: view:livestock.corral:livestock.livestock_corral_form
+msgid "Corral Information"
+msgstr "Información del potrero"
+
+#. module: livestock
+#: view:livestock.corral:livestock.livestock_corral_tree
+msgid "Corral Tree"
+msgstr "Lista del Potrero"
+
+#. module: livestock
+#: field:livestock.farm,corral_ids:0
+msgid "Corral ids"
+msgstr "Identificador del potrero"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+#: field:livestock.farm,corrals:0
+msgid "Corrals"
+msgstr "Potrero"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "Corrals into farm"
+msgstr "Potreros de la Finca"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "Country"
+msgstr "País"
+
+#. module: livestock
+#: field:livestock.embryo,created_date:0
+#: field:livestock.straw,created_date:0
+#: field:livestock.thermo,created_date:0
+msgid "Created"
+msgstr "Creado"
+
+#. module: livestock
+#: field:livestock.animal,create_uid:0
+#: field:livestock.color.animal,create_uid:0
+#: field:livestock.corral,create_uid:0
+#: field:livestock.disease,create_uid:0
+#: field:livestock.embryo,create_uid:0
+#: field:livestock.event,create_uid:0
+#: field:livestock.farm,create_uid:0
+#: field:livestock.nutrition,create_uid:0
+#: field:livestock.race.category.animal,create_uid:0
+#: field:livestock.sanitary.protocol,create_uid:0
+#: field:livestock.straw,create_uid:0
+#: field:livestock.thermo,create_uid:0
+#: field:livestock.thermo.event,create_uid:0
+#: field:livestock.weighing,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: livestock
+#: field:livestock.animal,create_date:0
+#: field:livestock.color.animal,create_date:0
+#: field:livestock.corral,create_date:0
+#: field:livestock.disease,create_date:0
+#: field:livestock.embryo,create_date:0
+#: field:livestock.event,create_date:0
+#: field:livestock.farm,create_date:0
+#: field:livestock.nutrition,create_date:0
+#: field:livestock.race.category.animal,create_date:0
+#: field:livestock.sanitary.protocol,create_date:0
+#: field:livestock.straw,create_date:0
+#: field:livestock.thermo,create_date:0
+#: field:livestock.thermo.event,create_date:0
+#: field:livestock.weighing,create_date:0
+msgid "Created on"
+msgstr "creado el"
+
+#. module: livestock
+#: help:livestock.straw,created_date:0
+msgid "Creation date of the straw"
+msgstr "Fecha de creación de la pajilla"
+
+#. module: livestock
+#: field:livestock.weighing,current_weight:0
+msgid "Current Weight"
+msgstr "Peso actual"
+
+#. module: livestock
+#: help:livestock.weighing,current_weight:0
+msgid "Current animal weight"
+msgstr "Peso actual del animal"
+
+#. module: livestock
+#: field:livestock.event,created_date:0
+#: field:livestock.thermo.event,event_date:0
+#: field:livestock.weighing,weighing_date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: livestock
+#: help:livestock.sanitary.protocol,treatment_date:0
+msgid "Date at which the treatment was applied"
+msgstr "Fecha en la cual el tratamiento fue aplicado"
+
+#. module: livestock
+#: help:livestock.disease,created_date:0
+msgid "Date at which the disease was identified"
+msgstr "Fecha en la que se identifica la enfermedad"
+
+#. module: livestock
+#: help:livestock.animal,born_date:0
+msgid "Date of birth of the animal"
+msgstr "Fecha de nacimiento del animal"
+
+#. module: livestock
+#: help:livestock.embryo,created_date:0
+msgid "Date of creation of the embryo"
+msgstr "Fecha de creación del embrión"
+
+#. module: livestock
+#: help:livestock.event,created_date:0
+msgid "Date on which the event occurred"
+msgstr "Fecha en la que se produjo el evento"
+
+#. module: livestock
+#: help:livestock.weighing,weighing_date:0
+msgid "Date on which the weight event occurred"
+msgstr "Fecha en la que se produjo el evento de pesaje"
+
+#. module: livestock
+#: field:livestock.color.animal,description:0
+#: field:livestock.event,description:0
+#: field:livestock.race.category.animal,description:0
+msgid "Description"
+msgstr "Descripción"
+
+#. module: livestock
+#: field:livestock.disease,diagnostician:0
+msgid "Diagnostician"
+msgstr "Veterinario"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_disease_action
+#: model:ir.ui.menu,name:livestock.livestock_disease_submenu_action
+#: field:livestock.sanitary.protocol,disease_id:0
+msgid "Disease"
+msgstr "Enfermedad"
+
+#. module: livestock
+#: view:livestock.disease:livestock.livestock_disease_form
+msgid "Disease Form"
+msgstr "Form de Enfermedad"
+
+#. module: livestock
+#: view:livestock.disease:livestock.livestock_disease_form
+msgid "Disease Information"
+msgstr "Información de la enfermedad"
+
+#. module: livestock
+#: view:livestock.disease:livestock.livestock_disease_tree
+msgid "Disease Tree"
+msgstr "Lista de la Enfermedad"
+
+#. module: livestock
+#: field:livestock.animal,disease_ids:0
+msgid "Disease ids"
+msgstr "Identicadores de Enfermedades"
+
+#. module: livestock
+#: help:livestock.disease,symptoms:0
+msgid "Disease symptoms"
+msgstr "Sintomas de la enfermedad"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Diseases"
+msgstr "Enfermedades"
+
+#. module: livestock
+#: field:livestock.nutrition,dosage:0
+msgid "Dosage"
+msgstr "Dosis"
+
+#. module: livestock
+#: help:livestock.nutrition,dosage:0
+msgid "Dose to be dispensed to the animal"
+msgstr "Dosis a dispensar al animal"
+
+#. module: livestock
+#: field:livestock.corral,drinking_water:0
+msgid "Drinking Water"
+msgstr "Consumo de agua"
+
+#. module: livestock
+#: help:livestock.thermo,created_date:0
+msgid "Effective date of the thermo first use"
+msgstr "Fecha del primer uso del termo"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_embryo_action
+#: model:ir.ui.menu,name:livestock.livestock_embryo_submenu_action
+#: field:livestock.straw,embryo_id:0
+msgid "Embryo"
+msgstr "Embrión"
+
+#. module: livestock
+#: view:livestock.embryo:livestock.livestock_embryo_form
+msgid "Embryo Form"
+msgstr "Form del embrión"
+
+#. module: livestock
+#: view:livestock.embryo:livestock.livestock_embryo_tree
+msgid "Embryo Tree"
+msgstr "Lista del embrión"
+
+#. module: livestock
+#: help:livestock.embryo,race:0
+msgid "Embryo race"
+msgstr "Raza del embrión"
+
+#. module: livestock
+#: help:livestock.embryo,species:0
+msgid "Embryo species"
+msgstr "Especie del embrión"
+
+#. module: livestock
+#: help:livestock.corral,active:0
+msgid "Enable/Disable corral record"
+msgstr "Activar/Desactivar registro del corral"
+
+#. module: livestock
+#: help:livestock.disease,active:0
+msgid "Enable/Disable disease record"
+msgstr "Activar/Desactivar registro de la enfermedad"
+
+#. module: livestock
+#: help:livestock.event,active:0
+msgid "Enable/Disable event record"
+msgstr "Activar/Desactivar registro del evento"
+
+#. module: livestock
+#: help:livestock.farm,active:0
+msgid "Enable/Disable farm record"
+msgstr "Activar/Desactivar registro de la finca "
+
+#. module: livestock
+#: help:livestock.color.animal,active:0
+#: help:livestock.race.category.animal,active:0
+msgid "Enable/Disable features record"
+msgstr "Activar/Desactivar registro de las características"
+
+#. module: livestock
+#: help:livestock.nutrition,active:0
+msgid "Enable/Disable nutrition record"
+msgstr "Activar/Desactivar registro"
+
+#. module: livestock
+#: help:livestock.embryo,active:0
+#: help:livestock.straw,active:0
+msgid "Enable/Disable record"
+msgstr "Activar/Desactivar registro"
+
+#. module: livestock
+#: help:livestock.thermo,active:0
+msgid "Enable/Disable thermo record"
+msgstr "Activar/Desactivar registro del termo"
+
+#. module: livestock
+#: help:livestock.sanitary.protocol,active:0
+msgid "Enable/Disable treatment record"
+msgstr "Activar/Desactivar registro del tratamiento"
+
+#. module: livestock
+#: help:livestock.weighing,active:0
+msgid "Enable/Disable weighing record"
+msgstr "Activar/Desactivar registro del pesaje"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_event_action
+#: field:livestock.thermo.event,event_type:0
+msgid "Event"
+msgstr "Evento"
+
+#. module: livestock
+#: view:livestock.event:livestock.livestock_event_form
+msgid "Event Form"
+msgstr "Form del Evento"
+
+#. module: livestock
+#: view:livestock.event:livestock.livestock_event_tree
+msgid "Event Tree"
+msgstr "Lista del Evento"
+
+#. module: livestock
+#: help:livestock.thermo.event,event_date:0
+msgid "Event date"
+msgstr "Fecha del evento"
+
+#. module: livestock
+#: field:livestock.animal,event_ids:0
+msgid "Event ids"
+msgstr "Identificadores de Eventos"
+
+#. module: livestock
+#: help:livestock.event,event_type:0
+msgid "Event type"
+msgstr "Tipo de evento"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_event_submenu
+msgid "Events"
+msgstr "Eventos"
+
+#. module: livestock
+#: field:livestock.disease,exam_result:0
+msgid "Exams Result"
+msgstr "Resultado de exámenes"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_facilities_submenu
+msgid "Facilities"
+msgstr "Instalaciones"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_farm_action
+#: model:ir.ui.menu,name:livestock.livestock_farm_submenu_action
+#: field:livestock.corral,farm_id:0
+#: field:livestock.embryo,farm:0
+#: field:livestock.thermo,farm_id:0
+msgid "Farm"
+msgstr "Finca"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "Farm Form"
+msgstr "Form de la Finca"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "Farm Information"
+msgstr "Información de la Finca"
+
+#. module: livestock
+#: field:livestock.farm,map_farm:0
+msgid "Farm Map"
+msgstr "Mapa de la finca"
+
+#. module: livestock
+#: help:livestock.farm,production:0
+msgid "Farm Production System"
+msgstr "Sistema productivo de la finca"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_tree
+msgid "Farm Tree"
+msgstr "Lista de la Finca"
+
+#. module: livestock
+#: help:livestock.embryo,farm:0
+msgid "Farm where the embryo was created"
+msgstr "Finc donde fue creado el embrión"
+
+#. module: livestock
+#: field:livestock.animal,male_parent_id:0
+#: field:livestock.embryo,father:0
+msgid "Father"
+msgstr "Padre"
+
+#. module: livestock
+#: field:livestock.race.category.animal,features_type:0
+msgid "Feature Type"
+msgstr "Tipo de característica"
+
+#. module: livestock
+#: field:livestock.animal,features:0
+#: field:livestock.race.category.animal,name:0
+msgid "Features"
+msgstr "Características"
+
+#. module: livestock
+#: help:livestock.race.category.animal,features_type:0
+msgid "Features type"
+msgstr "Tipo de características"
+
+#. module: livestock
+#: selection:livestock.animal,gender:0
+msgid "Female"
+msgstr "Hembra"
+
+#. module: livestock
+#: help:livestock.embryo,mother:0
+msgid "Female donor"
+msgstr "Donadora"
+
+#. module: livestock
+#: help:livestock.nutrition,application_frequency:0
+msgid "Frequency at which the nutritional supplement should be dispensed"
+msgstr "Frecuencia con la que el suplemento nutricional debe ser dispensado"
+
+#. module: livestock
+#: field:livestock.animal,gender:0
+msgid "Gender"
+msgstr "Sexo"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_genetic_submenu
+msgid "Genetic Manipulation"
+msgstr "Manipulación Genética"
+
+#. module: livestock
+#: field:livestock.animal,gestation:0
+msgid "Gestation"
+msgstr "Gestación"
+
+#. module: livestock
+#: field:livestock.farm,grass_area:0
+msgid "Grass Area"
+msgstr "Area de pasto"
+
+#. module: livestock
+#: field:livestock.corral,grass_prevalent:0
+#: field:livestock.farm,grass_prevalent:0
+msgid "Grass Prevalent"
+msgstr "Pasto predominante"
+
+#. module: livestock
+#: field:livestock.corral,hectares:0
+#: field:livestock.farm,hectares:0
+msgid "Hectares"
+msgstr "Hectáreas"
+
+#. module: livestock
+#: help:livestock.animal,raised:0
+msgid "Height of livestock considered from the heel of the front legs to the cross"
+msgstr "Altura del ganado considerado desde el talón de las patas delanteras a la cruz"
+
+#. module: livestock
+#: help:livestock.nutrition,manufacturing_lab:0
+msgid "Household manufactured the nutritional supplement"
+msgstr "Fabricante del suplemento nutricional"
+
+#. module: livestock
+#: field:livestock.animal,id:0
+#: field:livestock.color.animal,id:0
+#: field:livestock.corral,id:0
+#: field:livestock.disease,id:0
+#: field:livestock.embryo,id:0
+#: field:livestock.event,id:0
+#: field:livestock.farm,id:0
+#: field:livestock.nutrition,id:0
+#: field:livestock.race.category.animal,id:0
+#: field:livestock.sanitary.protocol,id:0
+#: field:livestock.straw,id:0
+#: field:livestock.thermo,id:0
+#: field:livestock.thermo.event,id:0
+#: field:livestock.weighing,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: livestock
+#: help:livestock.animal,registration:0
+msgid "Identification of an animal to an association of farmers"
+msgstr "Identificación de un animal ante una asociación de ganaderos"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+#: view:livestock.animal:livestock.livestock_animal_tree
+#: field:livestock.disease,name:0
+#: field:livestock.embryo,name:0
+#: field:livestock.farm,key:0
+#: field:livestock.straw,name:0
+#: field:livestock.thermo,name:0
+#: field:livestock.weighing,name:0
+msgid "Identifier"
+msgstr "Identificador"
+
+#. module: livestock
+#: field:livestock.disease,created_date:0
+msgid "Identifier Date"
+msgstr "Fecha de identificación"
+
+#. module: livestock
+#: help:livestock.weighing,name:0
+msgid "Identifier of the Weighing"
+msgstr "Identificación del peso"
+
+#. module: livestock
+#: help:livestock.farm,breeder_id:0
+msgid "Identifier of the breeder"
+msgstr "Identificación del criador"
+
+#. module: livestock
+#: help:livestock.disease,name:0
+msgid "Identifier of the disease"
+msgstr "Identificación de la enfermedad"
+
+#. module: livestock
+#: help:livestock.farm,key:0
+msgid "Identifier of the farm"
+msgstr "Identificación de la finca"
+
+#. module: livestock
+#: help:livestock.straw,name:0
+msgid "Identifier of the straw"
+msgstr "Identificación de la pajilla"
+
+#. module: livestock
+#: help:livestock.corral,bush_prevalent:0
+msgid "Iindicates the kind of dominant bush on the corral"
+msgstr "Indica el tipo de maleza dominante dentro del potrero"
+
+#. module: livestock
+#: help:livestock.corral,grass_prevalent:0
+msgid "Iindicates the kind of dominant grass on the corral"
+msgstr "Indica el tipo de pasto dominante dentro del potrero"
+
+#. module: livestock
+#: help:livestock.farm,bush_prevalent:0
+msgid "Indicates the kind of dominant bush on the farm"
+msgstr "Indica el tipo de maleza dominante en la finca"
+
+#. module: livestock
+#: help:livestock.farm,grass_prevalent:0
+msgid "Indicates the kind of dominant grass on the farm"
+msgstr "Indica el tipo de pasto dominante en la finca"
+
+#. module: livestock
+#: help:livestock.disease,diagnostician:0
+msgid "Indicates the person who performed the diagnosis"
+msgstr "Indica la persona que realizó el diagnóstico"
+
+#. module: livestock
+#: help:livestock.corral,purpose:0
+#: help:livestock.corral,topography:0
+msgid "Indicates the use that will give the corral"
+msgstr "Indica el uso que se le dará al corral"
+
+#. module: livestock
+#: help:livestock.animal,purchased:0
+msgid "Indicates when the animal has been purchased"
+msgstr "Indica cuando el animal ha sido comprado"
+
+#. module: livestock
+#: help:livestock.animal,sick:0
+msgid "Indicates when the animal is sick"
+msgstr "Indica cuando el animal está enfermo"
+
+#. module: livestock
+#: help:livestock.disease,exam:0
+msgid "Indicates which medical tests should be performed"
+msgstr "Indica que pruebas médicas deben realizarse"
+
+#. module: livestock
+#: field:livestock.nutrition,manufacturing_lab:0
+msgid "Laboratory/Factory"
+msgstr "Elaborado"
+
+#. module: livestock
+#: field:livestock.animal,labour_type:0
+msgid "Labour Type"
+msgstr "Tipo de parto"
+
+#. module: livestock
+#: field:livestock.animal,write_uid:0
+#: field:livestock.color.animal,write_uid:0
+#: field:livestock.corral,write_uid:0
+#: field:livestock.disease,write_uid:0
+#: field:livestock.embryo,write_uid:0
+#: field:livestock.event,write_uid:0
+#: field:livestock.farm,write_uid:0
+#: field:livestock.nutrition,write_uid:0
+#: field:livestock.race.category.animal,write_uid:0
+#: field:livestock.sanitary.protocol,write_uid:0
+#: field:livestock.straw,write_uid:0
+#: field:livestock.thermo,write_uid:0
+#: field:livestock.thermo.event,write_uid:0
+#: field:livestock.weighing,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: livestock
+#: field:livestock.animal,write_date:0
+#: field:livestock.color.animal,write_date:0
+#: field:livestock.corral,write_date:0
+#: field:livestock.disease,write_date:0
+#: field:livestock.embryo,write_date:0
+#: field:livestock.event,write_date:0
+#: field:livestock.farm,write_date:0
+#: field:livestock.nutrition,write_date:0
+#: field:livestock.race.category.animal,write_date:0
+#: field:livestock.sanitary.protocol,write_date:0
+#: field:livestock.straw,write_date:0
+#: field:livestock.thermo,write_date:0
+#: field:livestock.thermo.event,write_date:0
+#: field:livestock.weighing,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización sobre"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_livestock_submenu
+#: model:ir.ui.menu,name:livestock.livestock_menu
+msgid "Livestock"
+msgstr "Ganadería"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_animal
+msgid "Livestock Animal model"
+msgstr "Modelo del Animal"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_color_animal
+msgid "Livestock Configuration Animal Color Model"
+msgstr "Modelo de Configuración del Color del Animal"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_race_category_animal
+msgid "Livestock Configuration Race, Category and Species Animal Model"
+msgstr "Modelo de Configuración Raza, Categoría y Especie del Animal"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_corral
+msgid "Livestock Corral model"
+msgstr "Modelo del Potrero"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_disease
+msgid "Livestock Disease model"
+msgstr "Modelo de la Enfermedad"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_embryo
+msgid "Livestock Embryo model"
+msgstr "Modelo del Embrión"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_event
+msgid "Livestock Event Model"
+msgstr "Modelo del Evento"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_farm
+msgid "Livestock Farm model"
+msgstr "Model de la Finca"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_nutrition
+msgid "Livestock Nutrition Model"
+msgstr "Modelo Nutricional"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_sanitary_protocol
+msgid "Livestock Sanitary Protocol model"
+msgstr "Model del Protocolo Sanitario"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_straw
+msgid "Livestock Straw model"
+msgstr "Modelo de la Pajilla"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_thermo_event
+msgid "Livestock Thermo event for nitrogen measurement or reloading"
+msgstr "Evento para la medición y recarga de nitrógeno del termo"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_thermo
+msgid "Livestock Thermo model"
+msgstr "Model del Termo"
+
+#. module: livestock
+#: model:ir.model,name:livestock.model_livestock_weighing
+msgid "Livestock Weighing Model"
+msgstr "Model del Pesaje"
+
+#. module: livestock
+#: help:livestock.animal,breeder:0
+msgid "Livestock breeder"
+msgstr "Criador"
+
+#. module: livestock
+#: help:livestock.color.animal,description:0
+#: help:livestock.race.category.animal,description:0
+msgid "Long description of the animal characteristic"
+msgstr "Descripción larga de las características del animal"
+
+#. module: livestock
+#: help:livestock.event,description:0
+msgid "Long description of the event"
+msgstr "Descripción larga del evento"
+
+#. module: livestock
+#: field:livestock.nutrition,batch_manufacture:0
+msgid "Lot"
+msgstr "Lote"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Lts"
+msgstr "Lts"
+
+#. module: livestock
+#: selection:livestock.animal,gender:0
+msgid "Male"
+msgstr "Macho"
+
+#. module: livestock
+#: help:livestock.embryo,father:0
+msgid "Male donor"
+msgstr "Donador"
+
+#. module: livestock
+#: help:livestock.farm,map_farm:0
+msgid "Map of the farm"
+msgstr "Mapa de la finca"
+
+#. module: livestock
+#: field:livestock.thermo,measure_ids:0
+msgid "Measure ids"
+msgstr "Identificdores de medidas"
+
+#. module: livestock
+#: selection:livestock.thermo.event,event_type:0
+msgid "Measurement"
+msgstr "Medición"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Measures"
+msgstr "Medidas"
+
+#. module: livestock
+#: field:livestock.disease,exam:0
+msgid "Medical Exams"
+msgstr "Exámenes Médicos"
+
+#. module: livestock
+#: field:livestock.animal,female_parent_id:0
+#: field:livestock.embryo,mother:0
+msgid "Mother"
+msgstr "Madre"
+
+#. module: livestock
+#: field:livestock.event,name:0
+#: view:livestock.farm:livestock.livestock_farm_form
+#: field:livestock.straw,appellation:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: livestock
+#: help:livestock.farm,breeder_name:0
+msgid "Name of the breeder"
+msgstr "Nombre del criador"
+
+#. module: livestock
+#: help:livestock.event,name:0
+msgid "Name of the event"
+msgstr "Nombre del evento"
+
+#. module: livestock
+#: help:livestock.corral,hectares:0
+msgid "Number of acres comprising the corral"
+msgstr "Número de hectáreas que comprende el potrero"
+
+#. module: livestock
+#: help:livestock.farm,hectares:0
+msgid "Number of acres comprising the farm"
+msgstr "Número de hectáreas que comprende la finca"
+
+#. module: livestock
+#: help:livestock.farm,corrals:0
+msgid "Numbers of corrals into the farm"
+msgstr "Cantidad de potreros dentro de la finca"
+
+#. module: livestock
+#: help:livestock.thermo,racks:0
+msgid "Numbers of racks into the thermo"
+msgstr "Cantidad de canastillas dentro del termo"
+
+#. module: livestock
+#: help:livestock.thermo,shelves:0
+msgid "Numbers of shelves into the rack's thermo"
+msgstr "Cantidad de escaleras en las canastillas del termo"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+#: model:ir.actions.act_window,name:livestock.livestock_nutrition_action
+#: model:ir.ui.menu,name:livestock.livestock_nutrition_submenu_action
+msgid "Nutrition"
+msgstr "Nutrición"
+
+#. module: livestock
+#: view:livestock.nutrition:livestock.livestock_nutrition_form
+msgid "Nutrition Form"
+msgstr "Form de la Nutrición"
+
+#. module: livestock
+#: view:livestock.nutrition:livestock.livestock_nutrition_form
+msgid "Nutrition Information"
+msgstr "Información de la Nutrición"
+
+#. module: livestock
+#: view:livestock.nutrition:livestock.livestock_nutrition_tree
+msgid "Nutrition Tree"
+msgstr "Lista de la Nutrición"
+
+#. module: livestock
+#: field:livestock.animal,nutrition_ids:0
+msgid "Nutrition ids"
+msgstr "Identificadores de Nutrición"
+
+#. module: livestock
+#: help:livestock.nutrition,name:0
+msgid "Nutritional supplement to be dispensed"
+msgstr "Suplemento alimenticio a dispensar"
+
+#. module: livestock
+#: help:livestock.nutrition,supplement_type:0
+msgid "Nutritional supplement type to be dispensed"
+msgstr "Tipo de suplemento alimenticio a dispensar"
+
+#. module: livestock
+#: view:livestock.animal:livestock.livestock_animal_form
+#: field:livestock.corral,observation:0
+msgid "Observation"
+msgstr "Observación"
+
+#. module: livestock
+#: field:livestock.disease,observation:0
+#: field:livestock.sanitary.protocol,observation:0
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: livestock
+#: help:livestock.disease,observation:0
+msgid "Observations about the disease"
+msgstr "Observaciones acerca de la enfermedad"
+
+#. module: livestock
+#: help:livestock.sanitary.protocol,observation:0
+msgid "Observations about the treatment"
+msgstr "Observaciones acerca del tratamiento"
+
+#. module: livestock
+#: help:livestock.corral,observation:0
+msgid "Observations of corral"
+msgstr "Observaciones acerca del potrero"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_event_submenu_action
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Other Events"
+msgstr "Otros eventos"
+
+#. module: livestock
+#: view:livestock.event:livestock.livestock_event_form
+msgid "Other Events Information"
+msgstr "Información sobre otros eventos"
+
+#. module: livestock
+#: field:livestock.farm,owner:0
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: livestock
+#: help:livestock.farm,owner:0
+msgid "Owner of the farm"
+msgstr "Propietario de la finca"
+
+#. module: livestock
+#: field:livestock.animal,prod_id:0
+msgid "Parent"
+msgstr "Pariente"
+
+#. module: livestock
+#: help:livestock.farm,bush_area:0
+msgid "Percentage of land covered with bush farm"
+msgstr "Porcentaje de tierra de la finca cubierta con maleza"
+
+#. module: livestock
+#: help:livestock.farm,grass_area:0
+msgid "Percentage of land covered with grass farm"
+msgstr "Porcentaje de tierra de la finca cubierta con pasto"
+
+#. module: livestock
+#: help:livestock.nutrition,responsible:0
+msgid "Person administering the supplement"
+msgstr "Persona que administra el suplemento"
+
+#. module: livestock
+#: help:livestock.sanitary.protocol,treatment_applier:0
+msgid "Person who apply the treatment"
+msgstr "Persona que aplica el tratamiento"
+
+#. module: livestock
+#: help:livestock.weighing,responsible:0
+msgid "Person who made the weigh"
+msgstr "Persona que hizo el pesaje"
+
+#. module: livestock
+#: help:livestock.event,responsible:0
+msgid "Person who reported the event"
+msgstr "Persona que reportó el evento"
+
+#. module: livestock
+#: help:livestock.sanitary.protocol,treatment_supervisor:0
+msgid "Person who supervises the application of treatment"
+msgstr "Persona que supervisa la aplicación del tratamiento"
+
+#. module: livestock
+#: field:livestock.embryo,phase:0
+msgid "Phase"
+msgstr "Etapa"
+
+#. module: livestock
+#: help:livestock.embryo,phase:0
+msgid "Phase embryo"
+msgstr "Etapa embrionaria"
+
+#. module: livestock
+#: field:livestock.farm,production:0
+msgid "Production"
+msgstr "Producción"
+
+#. module: livestock
+#: help:livestock.weighing,projecting_days:0
+msgid "Projected number of days"
+msgstr "Número de días proyectados"
+
+#. module: livestock
+#: field:livestock.weighing,projecting_days:0
+msgid "Projecting Days"
+msgstr "Días proyectados"
+
+#. module: livestock
+#: field:livestock.animal,purchased:0
+msgid "Purchased"
+msgstr "Comprado"
+
+#. module: livestock
+#: field:livestock.corral,purpose:0
+#: field:livestock.thermo,purpose:0
+msgid "Purpose"
+msgstr "Propósito"
+
+#. module: livestock
+#: field:livestock.embryo,quality:0
+msgid "Quality"
+msgstr "Calidad"
+
+#. module: livestock
+#: help:livestock.embryo,quality:0
+msgid "Quality embryo"
+msgstr "Calidad del embrión"
+
+#. module: livestock
+#: field:livestock.animal,race:0
+#: field:livestock.color.animal,race:0
+#: field:livestock.embryo,race:0
+msgid "Race"
+msgstr "Raza"
+
+#. module: livestock
+#: field:livestock.thermo,racks:0
+msgid "Racks"
+msgstr "Canastillas"
+
+#. module: livestock
+#: field:livestock.animal,raised:0
+msgid "Raised"
+msgstr "Alzada"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+#: selection:livestock.thermo.event,event_type:0
+msgid "Refill"
+msgstr "Recarga"
+
+#. module: livestock
+#: field:livestock.thermo,refill_ids:0
+msgid "Refill ids"
+msgstr "Identificadores de Recargas"
+
+#. module: livestock
+#: field:livestock.animal,registration:0
+msgid "Registration"
+msgstr "Registro"
+
+#. module: livestock
+#: field:livestock.animal,repro_stage:0
+msgid "Reproductive Stage"
+msgstr "Etapa reproductiva"
+
+#. module: livestock
+#: help:livestock.animal,repro_stage:0
+msgid "Reproductive stage of the animal"
+msgstr "Etapa reproductiva del animal"
+
+#. module: livestock
+#: field:livestock.embryo,responsible:0
+#: field:livestock.event,responsible:0
+#: field:livestock.nutrition,responsible:0
+#: field:livestock.straw,responsible:0
+#: field:livestock.thermo.event,name:0
+#: field:livestock.weighing,responsible:0
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: livestock
+#: help:livestock.disease,exam_result:0
+msgid "Results of the exams"
+msgstr "Resultado de exámenes"
+
+#. module: livestock
+#: help:livestock.nutrition,administration_route:0
+msgid "Routes of administration of nutritional supplement"
+msgstr "Vías de administración de los suplementos nutricionales"
+
+#. module: livestock
+#: field:livestock.nutrition,supplement_type:0
+msgid "SF Type"
+msgstr "Tipo de suplemento"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_sanitary_protocol_submenu_action
+#: view:livestock.disease:livestock.livestock_disease_form
+msgid "Sanitary Protocol"
+msgstr "Protocolo Sanitario"
+
+#. module: livestock
+#: view:livestock.sanitary.protocol:livestock.livestock_sanitary_protocol_form
+msgid "Sanitary Protocol Form"
+msgstr "Form del Protocolo Sanitario"
+
+#. module: livestock
+#: view:livestock.sanitary.protocol:livestock.livestock_sanitary_protocol_form
+msgid "Sanitary Protocol Information"
+msgstr "Información del Protocolo Sanitario"
+
+#. module: livestock
+#: view:livestock.sanitary.protocol:livestock.livestock_sanitary_protocol_tree
+msgid "Sanitary Protocol Tree"
+msgstr "Lista del Protocolo Sanitario"
+
+#. module: livestock
+#: field:livestock.disease,sanitary_protocol_ids:0
+msgid "Sanitary protocol ids"
+msgstr "Identificadores del Protocolo Sanitario"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_sanitary_protocol_action
+msgid "Sanitary_Protocol"
+msgstr "Protocolo_Sanitario"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_color_animal_submenu_action
+msgid "Setting Animal Color"
+msgstr "Ajustar Color del Animal"
+
+#. module: livestock
+#: view:livestock.race.category.animal:livestock.livestock_race_category_animal_form
+msgid "Setting Animals"
+msgstr "Ajustar Animales"
+
+#. module: livestock
+#: model:ir.ui.menu,name:livestock.livestock_race_category_animal_submenu_action
+msgid "Setting Race, Category and Species"
+msgstr "Ajustar Raza, Categoría y Especie"
+
+#. module: livestock
+#: field:livestock.thermo,shelves:0
+msgid "Shelves"
+msgstr "Escalerillas"
+
+#. module: livestock
+#: field:livestock.animal,sick:0
+msgid "Sick"
+msgstr "Enfermo"
+
+#. module: livestock
+#: help:livestock.corral,drinking_water:0
+msgid "Source of water available in the corral"
+msgstr "Fuente de agua disponible en el potrero"
+
+#. module: livestock
+#: help:livestock.animal,features:0
+msgid "Special features of the animal"
+msgstr "Características especiales del animal"
+
+#. module: livestock
+#: field:livestock.animal,species:0
+#: field:livestock.embryo,species:0
+msgid "Species"
+msgstr "Especie"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "State"
+msgstr "Estado"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_straw_action
+#: model:ir.ui.menu,name:livestock.livestock_straw_submenu_action
+#: field:livestock.embryo,straw_id:0
+msgid "Straw"
+msgstr "Pajilla"
+
+#. module: livestock
+#: view:livestock.straw:livestock.livestock_straw_form
+msgid "Straw Form"
+msgstr "Form de la Pajilla"
+
+#. module: livestock
+#: view:livestock.straw:livestock.livestock_straw_form
+msgid "Straw Information"
+msgstr "Información de la Pajilla"
+
+#. module: livestock
+#: view:livestock.straw:livestock.livestock_straw_tree
+msgid "Straw Tree"
+msgstr "Lista de la pajilla"
+
+#. module: livestock
+#: help:livestock.straw,appellation:0
+#: help:livestock.thermo.event,name:0
+msgid "Straw name"
+msgstr "Nombre de la pajilla"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Straws"
+msgstr "Pajillas"
+
+#. module: livestock
+#: field:livestock.thermo,straws_ids:0
+msgid "Straws ids"
+msgstr "Identificadores de Pajillas"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Straws into thermo"
+msgstr "Pajillas dentro del termo"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: livestock
+#: field:livestock.nutrition,name:0
+msgid "Supporting Feature"
+msgstr "Tipo de soporte"
+
+#. module: livestock
+#: field:livestock.disease,symptoms:0
+msgid "Symptoms"
+msgstr "Sintomas"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_thermo_action
+#: model:ir.ui.menu,name:livestock.livestock_thermo_submenu_action
+#: field:livestock.straw,thermo_id:0
+#: field:livestock.thermo.event,can_id:0
+msgid "Thermo"
+msgstr "Termo"
+
+#. module: livestock
+#: help:livestock.thermo,capacity:0
+msgid "Thermo Capacity in liters"
+msgstr "Capacidad del termo medido en litros"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Thermo Form"
+msgstr "Form del termo"
+
+#. module: livestock
+#: help:livestock.thermo,name:0
+msgid "Thermo Identifier"
+msgstr "Identificador del termo"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Thermo Information"
+msgstr "Información del termo"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_tree
+msgid "Thermo Tree"
+msgstr "Lista del Termo"
+
+#. module: livestock
+#: help:livestock.thermo,characteristics:0
+msgid "Thermo characteristics"
+msgstr "Características Thermo"
+
+#. module: livestock
+#: field:livestock.farm,thermo_ids:0
+msgid "Thermo ids"
+msgstr "Identificadores de Termos"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Thermo nitrogen measurement"
+msgstr "Medición de nitrógeno del Termo"
+
+#. module: livestock
+#: view:livestock.thermo:livestock.livestock_thermo_form
+msgid "Thermo nitrogen refill"
+msgstr "Recarga de nitrógeno del Thermo"
+
+#. module: livestock
+#: help:livestock.thermo,purpose:0
+msgid "Thermo purpose. Store embryos or semen"
+msgstr "Propósito del termo. Almacena embriones o semen"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "Thermos"
+msgstr "Termos"
+
+#. module: livestock
+#: field:livestock.corral,topography:0
+msgid "Topography"
+msgstr "Topografía"
+
+#. module: livestock
+#: field:livestock.disease,treatment:0
+msgid "Treatment"
+msgstr "Tratamiento"
+
+#. module: livestock
+#: field:livestock.sanitary.protocol,treatment_date:0
+msgid "Treatment Date"
+msgstr "Fecha del tratamiento"
+
+#. module: livestock
+#: field:livestock.sanitary.protocol,treatment_applier:0
+msgid "Treatment applier"
+msgstr "Asistente"
+
+#. module: livestock
+#: view:livestock.disease:livestock.livestock_disease_form
+msgid "Treatment for disease"
+msgstr "Tratamiento de la enfermedad"
+
+#. module: livestock
+#: field:livestock.sanitary.protocol,treatment_supervisor:0
+msgid "Treatment supervisor"
+msgstr "Supervisor del tratamiento"
+
+#. module: livestock
+#: field:livestock.event,event_type:0
+#: field:livestock.straw,types:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: livestock
+#: help:livestock.animal,biotech:0
+msgid "Type of biotechnology that suitable gestation"
+msgstr "Tipo de biotecnología que propició la gestación"
+
+#. module: livestock
+#: help:livestock.animal,labour_type:0
+msgid "Type of birth of the animal"
+msgstr "Tipo de nacimiento del animal"
+
+#. module: livestock
+#: help:livestock.color.animal,race:0
+msgid "Type of breed"
+msgstr "Tipo de raza del animal"
+
+#. module: livestock
+#: help:livestock.animal,gestation:0
+msgid "Type of gestation"
+msgstr "Tipo de gestación del animal"
+
+#. module: livestock
+#: help:livestock.straw,types:0
+msgid "Typo of the straw"
+msgstr "Tipo de pajilla utilizada"
+
+#. module: livestock
+#: field:livestock.disease,veterinarian:0
+msgid "Veterinarian"
+msgstr "Veterinario"
+
+#. module: livestock
+#: field:livestock.corral,wharehouse_id:0
+msgid "Warehouse"
+msgstr "Potrero"
+
+#. module: livestock
+#: model:ir.actions.act_window,name:livestock.livestock_weighing_action
+#: model:ir.ui.menu,name:livestock.livestock_weighing_submenu_action
+#: view:livestock.animal:livestock.livestock_animal_form
+msgid "Weighing"
+msgstr "Pesaje"
+
+#. module: livestock
+#: view:livestock.weighing:livestock.livestock_weighing_form
+msgid "Weighing Form"
+msgstr "Form del Pesaje"
+
+#. module: livestock
+#: view:livestock.weighing:livestock.livestock_weighing_form
+msgid "Weighing Information"
+msgstr "Información del Pesaje"
+
+#. module: livestock
+#: view:livestock.weighing:livestock.livestock_weighing_tree
+msgid "Weighing Tree"
+msgstr "Listado del Pesaje"
+
+#. module: livestock
+#: field:livestock.animal,weighing_ids:0
+msgid "Weighing ids"
+msgstr "Identificadores de pesajes"
+
+#. module: livestock
+#: view:livestock.farm:livestock.livestock_farm_form
+msgid "ZIP"
+msgstr "Código postal"
+

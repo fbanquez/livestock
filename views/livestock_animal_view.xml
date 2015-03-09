@@ -99,7 +99,7 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page string="Nutririon">
+                            <page string="Nutrition">
                                 <field name="nutrition_ids">
                                     <tree string="Animal nutrition">
                                         <field name="name"/>

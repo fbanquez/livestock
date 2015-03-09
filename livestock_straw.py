@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from openerp import models, fields, api
+from openerp import models, fields, api, _
 
 class livestock_straw(models.Model):
     _name = 'livestock.straw'

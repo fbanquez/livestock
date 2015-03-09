@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from openerp import models, fields, api
+from openerp import models, fields, api, _
 
 class livestock_thermo(models.Model):
     _name = 'livestock.thermo'
@@ -58,7 +58,7 @@ class livestock_thermo(models.Model):
 
     # Fields of the Thermo Model
     name = fields.Char(string='Identifier', size=8, required=True, select=True, help="Thermo Identifier")
-    characteristics =  fields.Char(string='Characteristics', size=50, required=True, help="Thermo characeristics")
+    characteristics =  fields.Char(string='Characteristics', size=50, required=True, help="Thermo characteristics")
     capacity = fields.Float(string='Capacity', digits=(5, 2), required=True, help="Thermo Capacity in liters")
     racks = fields.Integer(string='Racks', required=True, help="Numbers of racks into the thermo")
     shelves = fields.Integer(string='Shelves', required=True, help="Numbers of shelves into the rack's thermo")

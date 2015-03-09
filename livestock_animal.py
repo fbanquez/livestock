@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from openerp import models, fields, api
+from openerp import models, fields, api, _
 
 class livestock_animal(models.Model):
     _name = 'livestock.animal'
@@ -34,12 +34,10 @@ class livestock_animal(models.Model):
     @api.depends('race', 'colour')
     def _colour_animal_selection(self):
         if self.race:
-            print "true: %s" % self.race
             query = """SELECT color FROM livestock_color_animal WHERE race = %s
             AND active ORDER BY color"""
             self.env.cr.execute(query, (self.race))
         else:
-            print "false: %s" % self.race
             query = """SELECT distinct(color) FROM livestock_color_animal WHERE active
             ORDER BY color"""
             self.env.cr.execute(query)
@@ -77,6 +75,11 @@ class livestock_animal(models.Model):
                ('washing', "Sperm Washing"),
                ('aspiration', "Follicular Aspiration"))
 
+    def _labour_type_animal_selection(self):
+        return(('normal', "Normal"),
+               ('caesarean', "Caesarean Section"),
+               ('induced', "Induced"))
+
     @api.one
     def _get_image(self):
         return dict((s.id, tools.image_get_resized_images(s.image)) for s in self)
@@ -99,7 +102,7 @@ class livestock_animal(models.Model):
     repro_stage = fields.Char(string='Reproductive Stage', size=50, required=True, help="Reproductive stage of the animal")
     birth_weight = fields.Float(string='Birth Weight', digits=(4, 2), required=True, help="Animal birth weight")
     born_date = fields.Date(string='Born Date', default=datetime.now(), required=True, help="Date of birth of the animal")
-    labour_type = fields.Char(string='Labour Type', size=30, required=True, help="Type of birth of the animal")
+    labour_type = fields.Selection(string='Labour Type', required=True, selection=_labour_type_animal_selection, help="Type of birth of the animal")
     purchased = fields.Boolean(string='Purchased', default=False, help="Indicates when the animal has been purchased")
     sick = fields.Boolean(string='Sick', default=False, help="Indicates when the animal is sick")
     #### Hidden fields ####
