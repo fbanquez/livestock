@@ -10,24 +10,24 @@ class livestock_corral(models.Model):
     _order = "wharehouse_id desc"
 
     def _purpose_corral_selection(self):
-        return(('breeding', "Breeding"),
-               ('fattening', "Fattening"),
-               ('mating', "Mating"),
-               ('milking', "Milking"),
-               ('rest', "Male Rest"))
+        return(('breeding', _("Breeding")),
+               ('fattening', _("Fattening")),
+               ('mating', _("Mating")),
+               ('milking', _("Milking")),
+               ('rest', _("Male Rest")))
 
     def _topography_corral_selection(self):
-        return(('flat', "Flat"),
-               ('soft_undulating', "Soft Undulating"),
-               ('undulating', "Undulating"),
-               ('broken', "Broken"))
+        return(('flat', _("Flat")),
+               ('soft_undulating', _("Soft Undulating")),
+               ('undulating', _("Undulating")),
+               ('broken', _("Broken")))
 
     def _water_corral_selection(self):
-        return(('fountains', "Fountains"),
-               ('streams', "Streams"),
-               ('aqueducts', "Aqueducts"),
-               ('ditch', "Ditch"),
-               ('other', "Other"))
+        return(('fountains', _("Fountains")),
+               ('streams', _("Streams")),
+               ('aqueducts', _("Aqueducts")),
+               ('ditch', _("Ditch")),
+               ('other', _("Other")))
 
     # Fields of the Corral Model
     wharehouse_id = fields.Many2one('stock.warehouse', string='Warehouse', required=True, ondelete='cascade', select=True, auto_join=True)

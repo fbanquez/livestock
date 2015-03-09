@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0-20150302\n"
+"Project-Id-Version: Odoo Server 8.0-20150309\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-08 22:42+0000\n"
-"PO-Revision-Date: 2015-03-08 22:42+0000\n"
+"POT-Creation-Date: 2015-03-07 17:59+0000\n"
+"PO-Revision-Date: 2015-03-07 17:59+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -73,7 +73,7 @@ msgstr "Información del Animal"
 #. module: livestock
 #: view:livestock.animal:livestock.livestock_animal_tree
 msgid "Animal Tree"
-msgstr "LIsta de Animal"
+msgstr "Lista de Animal"
 
 #. module: livestock
 #: help:livestock.animal,birth_weight:0
@@ -182,6 +182,18 @@ msgid "Application Frequency"
 msgstr "Frecuencia de aplicación"
 
 #. module: livestock
+#: code:addons/livestock/livestock_corral.py:28
+#, python-format
+msgid "Aqueducts"
+msgstr "Acueductos"
+
+#. module: livestock
+#: code:addons/livestock/livestock_animal.py:74
+#, python-format
+msgid "Artificial Insemination"
+msgstr "Inseminación Artificial"
+
+#. module: livestock
 #: help:livestock.disease,veterinarian:0
 msgid "Attending veterinarian"
 msgstr "Veterinario a cargo"
@@ -207,7 +219,9 @@ msgid "Biologist, veterinarian or person responsible for the creation of the str
 msgstr "Biólogo, veterinario o persona responsable de la creación de la pajilla"
 
 #. module: livestock
+#: code:addons/livestock/livestock_animal.py:71
 #: field:livestock.animal,biotech:0
+#, python-format
 msgid "Biotechnology"
 msgstr "Biotecnología"
 
@@ -247,6 +261,18 @@ msgid "Breeder Name"
 msgstr "Nombre del criador"
 
 #. module: livestock
+#: code:addons/livestock/livestock_corral.py:13
+#, python-format
+msgid "Breeding"
+msgstr "Cría"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:23
+#, python-format
+msgid "Broken"
+msgstr "Quebrada"
+
+#. module: livestock
 #: field:livestock.farm,bush_area:0
 msgid "Bush Area"
 msgstr "Area de malezas"
@@ -258,12 +284,20 @@ msgid "Bush Prevalent"
 msgstr "Maleza predominante"
 
 #. module: livestock
+#: code:addons/livestock/livestock_animal.py:80
+#, python-format
+msgid "Caesarean Section"
+msgstr "Cesárea"
+
+#. module: livestock
 #: field:livestock.thermo,capacity:0
 msgid "Capacity"
 msgstr "Capacidad"
 
 #. module: livestock
+#: code:addons/livestock/livestock_race_category_animal.py:14
 #: field:livestock.animal,category:0
+#, python-format
 msgid "Category"
 msgstr "Categoría"
 
@@ -312,6 +346,18 @@ msgstr "Comentario"
 #: help:livestock.weighing,comment:0
 msgid "Comments about weighing the animal"
 msgstr "Comentarios sobre el peso del animal"
+
+#. module: livestock
+#: code:addons/livestock/livestock_farm.py:15
+#, python-format
+msgid "Commercial Breeding"
+msgstr "Cría Comercial"
+
+#. module: livestock
+#: code:addons/livestock/livestock_embryo.py:35
+#, python-format
+msgid "Compact Morula"
+msgstr "Morula Compacta"
 
 #. module: livestock
 #: field:livestock.farm,company_id:0
@@ -427,7 +473,7 @@ msgstr "Creado por"
 #: field:livestock.thermo.event,create_date:0
 #: field:livestock.weighing,create_date:0
 msgid "Created on"
-msgstr "creado el"
+msgstr "Creado el"
 
 #. module: livestock
 #: help:livestock.straw,created_date:0
@@ -445,6 +491,12 @@ msgid "Current animal weight"
 msgstr "Peso actual del animal"
 
 #. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:16
+#, python-format
+msgid "Cutaneous"
+msgstr "Cutáneo"
+
+#. module: livestock
 #: field:livestock.event,created_date:0
 #: field:livestock.thermo.event,event_date:0
 #: field:livestock.weighing,weighing_date:0
@@ -452,14 +504,14 @@ msgid "Date"
 msgstr "Fecha"
 
 #. module: livestock
-#: help:livestock.sanitary.protocol,treatment_date:0
-msgid "Date at which the treatment was applied"
-msgstr "Fecha en la cual el tratamiento fue aplicado"
-
-#. module: livestock
 #: help:livestock.disease,created_date:0
 msgid "Date at which the disease was identified"
 msgstr "Fecha en la que se identifica la enfermedad"
+
+#. module: livestock
+#: help:livestock.sanitary.protocol,treatment_date:0
+msgid "Date at which the treatment was applied"
+msgstr "Fecha en la cual el tratamiento fue aplicado"
 
 #. module: livestock
 #: help:livestock.animal,born_date:0
@@ -531,6 +583,12 @@ msgid "Diseases"
 msgstr "Enfermedades"
 
 #. module: livestock
+#: code:addons/livestock/livestock_corral.py:29
+#, python-format
+msgid "Ditch"
+msgstr "Jagüey"
+
+#. module: livestock
 #: field:livestock.nutrition,dosage:0
 msgid "Dosage"
 msgstr "Dosis"
@@ -546,14 +604,29 @@ msgid "Drinking Water"
 msgstr "Consumo de agua"
 
 #. module: livestock
+#: code:addons/livestock/livestock_farm.py:14
+#, python-format
+msgid "Dual Purpose"
+msgstr "Doblr Propósito"
+
+#. module: livestock
+#: code:addons/livestock/livestock_embryo.py:36
+#, python-format
+msgid "Early Blastocyst"
+msgstr "Blastocisto Temprano"
+
+#. module: livestock
 #: help:livestock.thermo,created_date:0
 msgid "Effective date of the thermo first use"
 msgstr "Fecha del primer uso del termo"
 
 #. module: livestock
+#: code:addons/livestock/livestock_straw.py:17
+#: code:addons/livestock/livestock_thermo.py:12
 #: model:ir.actions.act_window,name:livestock.livestock_embryo_action
 #: model:ir.ui.menu,name:livestock.livestock_embryo_submenu_action
 #: field:livestock.straw,embryo_id:0
+#, python-format
 msgid "Embryo"
 msgstr "Embrión"
 
@@ -671,6 +744,12 @@ msgid "Exams Result"
 msgstr "Resultado de exámenes"
 
 #. module: livestock
+#: code:addons/livestock/livestock_embryo.py:37
+#, python-format
+msgid "Expanded Blastocyst"
+msgstr "Blastocistos Expandidos"
+
+#. module: livestock
 #: model:ir.ui.menu,name:livestock.livestock_facilities_submenu
 msgid "Facilities"
 msgstr "Instalaciones"
@@ -712,13 +791,20 @@ msgstr "Lista de la Finca"
 #. module: livestock
 #: help:livestock.embryo,farm:0
 msgid "Farm where the embryo was created"
-msgstr "Finc donde fue creado el embrión"
+msgstr "Finca donde fue creado el embrión"
 
 #. module: livestock
 #: field:livestock.animal,male_parent_id:0
 #: field:livestock.embryo,father:0
 msgid "Father"
 msgstr "Padre"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:14
+#: code:addons/livestock/livestock_farm.py:16
+#, python-format
+msgid "Fattening"
+msgstr "Engorde"
 
 #. module: livestock
 #: field:livestock.race.category.animal,features_type:0
@@ -737,7 +823,9 @@ msgid "Features type"
 msgstr "Tipo de características"
 
 #. module: livestock
+#: code:addons/livestock/livestock_animal.py:101
 #: selection:livestock.animal,gender:0
+#, python-format
 msgid "Female"
 msgstr "Hembra"
 
@@ -745,6 +833,24 @@ msgstr "Hembra"
 #: help:livestock.embryo,mother:0
 msgid "Female donor"
 msgstr "Donadora"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:20
+#, python-format
+msgid "Flat"
+msgstr "Plano"
+
+#. module: livestock
+#: code:addons/livestock/livestock_animal.py:76
+#, python-format
+msgid "Follicular Aspiration"
+msgstr "Aspiración Folicular"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:26
+#, python-format
+msgid "Fountains"
+msgstr "Fuentes"
 
 #. module: livestock
 #: help:livestock.nutrition,application_frequency:0
@@ -762,7 +868,9 @@ msgid "Genetic Manipulation"
 msgstr "Manipulación Genética"
 
 #. module: livestock
+#: code:addons/livestock/livestock_event.py:12
 #: field:livestock.animal,gestation:0
+#, python-format
 msgid "Gestation"
 msgstr "Gestación"
 
@@ -776,6 +884,12 @@ msgstr "Area de pasto"
 #: field:livestock.farm,grass_prevalent:0
 msgid "Grass Prevalent"
 msgstr "Pasto predominante"
+
+#. module: livestock
+#: code:addons/livestock/livestock_embryo.py:38
+#, python-format
+msgid "Hatched Blastocyst"
+msgstr "Blastocistos Eclosionados"
 
 #. module: livestock
 #: field:livestock.corral,hectares:0
@@ -903,6 +1017,24 @@ msgstr "Indica cuando el animal está enfermo"
 #: help:livestock.disease,exam:0
 msgid "Indicates which medical tests should be performed"
 msgstr "Indica que pruebas médicas deben realizarse"
+
+#. module: livestock
+#: code:addons/livestock/livestock_animal.py:81
+#, python-format
+msgid "Induced"
+msgstr "Inducido"
+
+#. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:14
+#, python-format
+msgid "Intramuscular"
+msgstr "Intramuscular"
+
+#. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:15
+#, python-format
+msgid "Intravenous"
+msgstr "Intravenoso"
 
 #. module: livestock
 #: field:livestock.nutrition,manufacturing_lab:0
@@ -1053,9 +1185,17 @@ msgid "Lts"
 msgstr "Lts"
 
 #. module: livestock
+#: code:addons/livestock/livestock_animal.py:101
 #: selection:livestock.animal,gender:0
+#, python-format
 msgid "Male"
 msgstr "Macho"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:17
+#, python-format
+msgid "Male Rest"
+msgstr "Descanso de Machos"
 
 #. module: livestock
 #: help:livestock.embryo,father:0
@@ -1068,12 +1208,20 @@ msgid "Map of the farm"
 msgstr "Mapa de la finca"
 
 #. module: livestock
+#: code:addons/livestock/livestock_corral.py:15
+#, python-format
+msgid "Mating"
+msgstr "Monta"
+
+#. module: livestock
 #: field:livestock.thermo,measure_ids:0
 msgid "Measure ids"
 msgstr "Identificdores de medidas"
 
 #. module: livestock
+#: code:addons/livestock/livestock_thermo.py:85
 #: selection:livestock.thermo.event,event_type:0
+#, python-format
 msgid "Measurement"
 msgstr "Medición"
 
@@ -1086,6 +1234,30 @@ msgstr "Medidas"
 #: field:livestock.disease,exam:0
 msgid "Medical Exams"
 msgstr "Exámenes Médicos"
+
+#. module: livestock
+#: code:addons/livestock/livestock_farm.py:13
+#, python-format
+msgid "Milk"
+msgstr "Lácteos"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:16
+#, python-format
+msgid "Milking"
+msgstr "Ordeño"
+
+#. module: livestock
+#: code:addons/livestock/livestock_straw.py:13
+#, python-format
+msgid "Mini"
+msgstr "Mini"
+
+#. module: livestock
+#: code:addons/livestock/livestock_embryo.py:34
+#, python-format
+msgid "Morula"
+msgstr "Morula"
 
 #. module: livestock
 #: field:livestock.animal,female_parent_id:0
@@ -1109,6 +1281,19 @@ msgstr "Nombre del criador"
 #: help:livestock.event,name:0
 msgid "Name of the event"
 msgstr "Nombre del evento"
+
+#. module: livestock
+#: code:addons/livestock/livestock_animal.py:70
+#, python-format
+msgid "Natural Mating"
+msgstr "Monta Natural"
+
+#. module: livestock
+#: code:addons/livestock/livestock_animal.py:79
+#: code:addons/livestock/livestock_straw.py:12
+#, python-format
+msgid "Normal"
+msgstr "Normal"
 
 #. module: livestock
 #: help:livestock.corral,hectares:0
@@ -1136,9 +1321,9 @@ msgid "Numbers of shelves into the rack's thermo"
 msgstr "Cantidad de escaleras en las canastillas del termo"
 
 #. module: livestock
-#: view:livestock.animal:livestock.livestock_animal_form
 #: model:ir.actions.act_window,name:livestock.livestock_nutrition_action
 #: model:ir.ui.menu,name:livestock.livestock_nutrition_submenu_action
+#: view:livestock.animal:livestock.livestock_animal_form
 msgid "Nutrition"
 msgstr "Nutrición"
 
@@ -1200,10 +1385,23 @@ msgid "Observations of corral"
 msgstr "Observaciones acerca del potrero"
 
 #. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:12
+#, python-format
+msgid "Orally"
+msgstr "Oral"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:30
+#: code:addons/livestock/livestock_event.py:14
+#, python-format
+msgid "Other"
+msgstr "Otro"
+
+#. module: livestock
 #: model:ir.ui.menu,name:livestock.livestock_event_submenu_action
 #: view:livestock.animal:livestock.livestock_animal_form
 msgid "Other Events"
-msgstr "Otros eventos"
+msgstr "Otros Eventos"
 
 #. module: livestock
 #: view:livestock.event:livestock.livestock_event_form
@@ -1219,6 +1417,12 @@ msgstr "Propietario"
 #: help:livestock.farm,owner:0
 msgid "Owner of the farm"
 msgstr "Propietario de la finca"
+
+#. module: livestock
+#: code:addons/livestock/livestock_event.py:13
+#, python-format
+msgid "Palpation"
+msgstr "Palpación"
 
 #. module: livestock
 #: field:livestock.animal,prod_id:0
@@ -1286,6 +1490,12 @@ msgid "Projecting Days"
 msgstr "Días proyectados"
 
 #. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:21
+#, python-format
+msgid "Provender"
+msgstr "Forraje"
+
+#. module: livestock
 #: field:livestock.animal,purchased:0
 msgid "Purchased"
 msgstr "Comprado"
@@ -1302,14 +1512,40 @@ msgid "Quality"
 msgstr "Calidad"
 
 #. module: livestock
+#: code:addons/livestock/livestock_embryo.py:41
+#, python-format
+msgid "Quality 1"
+msgstr "Calidad 1"
+
+#. module: livestock
+#: code:addons/livestock/livestock_embryo.py:42
+#, python-format
+msgid "Quality 2"
+msgstr "Calidad 2"
+
+#. module: livestock
+#: code:addons/livestock/livestock_embryo.py:43
+#, python-format
+msgid "Quality 3"
+msgstr "Calidad 3"
+
+#. module: livestock
+#: code:addons/livestock/livestock_embryo.py:44
+#, python-format
+msgid "Quality 4"
+msgstr "Calidad 4"
+
+#. module: livestock
 #: help:livestock.embryo,quality:0
 msgid "Quality embryo"
 msgstr "Calidad del embrión"
 
 #. module: livestock
+#: code:addons/livestock/livestock_race_category_animal.py:13
 #: field:livestock.animal,race:0
 #: field:livestock.color.animal,race:0
 #: field:livestock.embryo,race:0
+#, python-format
 msgid "Race"
 msgstr "Raza"
 
@@ -1324,8 +1560,16 @@ msgid "Raised"
 msgstr "Alzada"
 
 #. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:18
+#, python-format
+msgid "Rectal"
+msgstr "Rectal"
+
+#. module: livestock
+#: code:addons/livestock/livestock_thermo.py:85
 #: view:livestock.thermo:livestock.livestock_thermo_form
 #: selection:livestock.thermo.event,event_type:0
+#, python-format
 msgid "Refill"
 msgstr "Recarga"
 
@@ -1406,6 +1650,13 @@ msgid "Sanitary_Protocol"
 msgstr "Protocolo_Sanitario"
 
 #. module: livestock
+#: code:addons/livestock/livestock_straw.py:16
+#: code:addons/livestock/livestock_thermo.py:13
+#, python-format
+msgid "Semen"
+msgstr "Semen"
+
+#. module: livestock
 #: model:ir.ui.menu,name:livestock.livestock_color_animal_submenu_action
 msgid "Setting Animal Color"
 msgstr "Ajustar Color del Animal"
@@ -1431,6 +1682,12 @@ msgid "Sick"
 msgstr "Enfermo"
 
 #. module: livestock
+#: code:addons/livestock/livestock_corral.py:21
+#, python-format
+msgid "Soft Undulating"
+msgstr "Ondulada Suave"
+
+#. module: livestock
 #: help:livestock.corral,drinking_water:0
 msgid "Source of water available in the corral"
 msgstr "Fuente de agua disponible en el potrero"
@@ -1441,10 +1698,18 @@ msgid "Special features of the animal"
 msgstr "Características especiales del animal"
 
 #. module: livestock
+#: code:addons/livestock/livestock_race_category_animal.py:12
 #: field:livestock.animal,species:0
 #: field:livestock.embryo,species:0
+#, python-format
 msgid "Species"
 msgstr "Especie"
+
+#. module: livestock
+#: code:addons/livestock/livestock_animal.py:75
+#, python-format
+msgid "Sperm Washing"
+msgstr "Lavado de Esperma"
 
 #. module: livestock
 #: view:livestock.farm:livestock.livestock_farm_form
@@ -1495,9 +1760,33 @@ msgid "Straws into thermo"
 msgstr "Pajillas dentro del termo"
 
 #. module: livestock
+#: code:addons/livestock/livestock_corral.py:27
+#, python-format
+msgid "Streams"
+msgstr "Arroyos"
+
+#. module: livestock
 #: view:livestock.farm:livestock.livestock_farm_form
 msgid "Street..."
 msgstr "Calle..."
+
+#. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:17
+#, python-format
+msgid "Subcutaneous"
+msgstr "Subcutáneo"
+
+#. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:13
+#, python-format
+msgid "Sublingual"
+msgstr "Sublingual"
+
+#. module: livestock
+#: code:addons/livestock/livestock_nutrition.py:22
+#, python-format
+msgid "Supplement"
+msgstr "Suplemento"
 
 #. module: livestock
 #: field:livestock.nutrition,name:0
@@ -1633,6 +1922,12 @@ msgstr "Tipo de gestación del animal"
 #: help:livestock.straw,types:0
 msgid "Typo of the straw"
 msgstr "Tipo de pajilla utilizada"
+
+#. module: livestock
+#: code:addons/livestock/livestock_corral.py:22
+#, python-format
+msgid "Undulating"
+msgstr "Ondulada"
 
 #. module: livestock
 #: field:livestock.disease,veterinarian:0

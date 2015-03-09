@@ -67,18 +67,18 @@ class livestock_animal(models.Model):
         return [(row[0], row[0]) for row in self.env.cr.fetchall()]
 
     def _gestation_animal_selection(self):
-        return(('mating', "Natural Mating"),
-               ('biotechnology', "Biotechnology"))
+        return(('mating', _("Natural Mating")),
+               ('biotechnology', _("Biotechnology")))
 
     def _biotech_animal_selection(self):
-        return(('insemination', "Artificial Insemination"),
-               ('washing', "Sperm Washing"),
-               ('aspiration', "Follicular Aspiration"))
+        return(('insemination', _("Artificial Insemination")),
+               ('washing', _("Sperm Washing")),
+               ('aspiration', _("Follicular Aspiration")))
 
     def _labour_type_animal_selection(self):
-        return(('normal', "Normal"),
-               ('caesarean', "Caesarean Section"),
-               ('induced', "Induced"))
+        return(('normal', _("Normal")),
+               ('caesarean', _("Caesarean Section")),
+               ('induced', _("Induced")))
 
     @api.one
     def _get_image(self):
@@ -98,7 +98,7 @@ class livestock_animal(models.Model):
     gestation = fields.Selection(string='Gestation', selection=_gestation_animal_selection, required=True, help="Type of gestation")
     biotech = fields.Selection(string='Biotechnology', selection=_biotech_animal_selection, required=False, help="Type of biotechnology that suitable gestation")
     registration = fields.Char(string='Registration', size=8, required=False, help="Identification of an animal to an association of farmers")
-    gender = fields.Selection(string='Gender', selection=[('female', 'Female'), ('male', 'Male')], required=True, help="Animal gender")
+    gender = fields.Selection(string='Gender', selection=[('female', _("Female")), ('male', _("Male"))], required=True, help="Animal gender")
     repro_stage = fields.Char(string='Reproductive Stage', size=50, required=True, help="Reproductive stage of the animal")
     birth_weight = fields.Float(string='Birth Weight', digits=(4, 2), required=True, help="Animal birth weight")
     born_date = fields.Date(string='Born Date', default=datetime.now(), required=True, help="Date of birth of the animal")

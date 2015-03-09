@@ -31,17 +31,17 @@ class livestock_embryo(models.Model):
         return [(row[0], row[0]) for row in self.env.cr.fetchall()]
 
     def _phase_embryo_selection(self):
-        return(('m', "Morula"),
-               ('mc', "Morula Compacta"),
-               ('bt', "Blastocisto Temprano"),
-               ('bx', "Blastocisto Expandido"),
-               ('bc', "Blastocisto Eclosionado"))
+        return(('mo', _("Morula")),
+               ('cm', _("Compact Morula")),
+               ('eab', _("Early Blastocyst")),
+               ('exb', _("Expanded Blastocyst")),
+               ('hb', _("Hatched Blastocyst")))
 
     def _quality_embryo_selection(self):
-        return(('c1', "Calidad 1"),
-               ('c2', "Calidad 2"),
-               ('c3', "Calidad 3"),
-               ('c4', "Calidad 4"))
+        return(('q1', _("Quality 1")),
+               ('q2', _("Quality 2")),
+               ('q3', _("Quality 3")),
+               ('q4', _("Quality 4")))
 
     # Fields of the Embryo Model
     name = fields.Char(string='Identifier', size=8, required=True, select=True, help="Alphanumeric identifier embryo")

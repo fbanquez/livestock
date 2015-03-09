@@ -9,9 +9,9 @@ class livestock_event(models.Model):
     _order = "created_date desc"
 
     def _event_type_event_selection(self):
-        return(('gestation', "Gestation"),
-               ('palpation', "Palpation"),
-               ('other', "Other"))
+        return(('gestation', _("Gestation")),
+               ('palpation', _("Palpation")),
+               ('other', _("Other")))
 
     # Fields of the Event Model
     name = fields.Char(string='Name', size=20, required=True, help="Name of the event")

@@ -9,17 +9,17 @@ class livestock_nutrition(models.Model):
     _order = "name desc"
 
     def _administration_route_nutrition_selection(self):
-        return(('orally', "Orally"),
-               ('sublingual', "Sublingual"),
-               ('intramuscular', "Intramuscular"),
-               ('intravenous', "Intravenous"),
-               ('cutaneous', "Cutaneous"),
-               ('subcutaneous', "Subcutaneous"),
-               ('rectal', "Rectal"))
+        return(('orally', _("Orally")),
+               ('sublingual', _("Sublingual")),
+               ('intramuscular', _("Intramuscular")),
+               ('intravenous', _("Intravenous")),
+               ('cutaneous', _("Cutaneous")),
+               ('subcutaneous', _("Subcutaneous")),
+               ('rectal', _("Rectal")))
 
     def _supporting_feature_nutrition_selection(self):
-        return(('provender', "Provender"),
-               ('supplement', "Supplement"))
+        return(('provender', _("Provender")),
+               ('supplement', _("Supplement")))
 
     # Fields of the Event Model
     name = fields.Selection(string='Supporting Feature', required=True, selection=_supporting_feature_nutrition_selection, help="Nutritional supplement to be dispensed")
@@ -30,7 +30,6 @@ class livestock_nutrition(models.Model):
     administration_route = fields.Selection(string='Administration Routes', selection=_administration_route_nutrition_selection, required=True, help="Routes of administration of nutritional supplement")
     application_frequency = fields.Char(string='Application Frequency', size=25, required=True, help="Frequency at which the nutritional supplement should be dispensed")
     responsible = fields.Char(string='Responsible', required=True, size=30, default=lambda self: self.env.user.name, help="Person administering the supplement")
-    #created_date = fields.Datetime(string='Date', required=True, default=datetime.now(), help="Date on which the event occurred")
     animal_id = fields.Many2one('livestock.animal', string='Animal', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable nutrition record")
 

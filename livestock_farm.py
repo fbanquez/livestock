@@ -10,10 +10,10 @@ class livestock_farm(models.Model):
     _order = "key desc"
 
     def _production_farm_selection(self):
-        return(('milk', "Milk"),
-               ('dual', "Dual Purpose"),
-               ('commercial', "Commercial Breeding"),
-               ('fattening', "Fattening"))
+        return(('milk', _("Milk")),
+               ('dual', _("Dual Purpose")),
+               ('commercial', _("Commercial Breeding")),
+               ('fattening', _("Fattening")))
 
     def on_change_country(self, cr, uid, ids, country_id, context=None):
         res = {'domain': {'state_id': []}}

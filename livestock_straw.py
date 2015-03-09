@@ -9,12 +9,12 @@ class livestock_straw(models.Model):
     _order = "name desc"
 
     def _type_straw_selection(self):
-        return(('nornal', "Normal"),
-               ('mini', "Mini"))
+        return(('nornal', _("Normal")),
+               ('mini', _("Mini")))
 
     def _contents_straw_selection(self):
-        return(('semen', 'Semen'),
-                ('embryo', 'Embryo'))
+        return(('semen', _("Semen")),
+                ('embryo', _("Embryo")))
 
     # Fields of the Straw Model
     name = fields.Char(string='Identifier', size=8, required=True, help="Identifier of the straw")

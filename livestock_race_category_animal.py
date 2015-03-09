@@ -9,9 +9,9 @@ class livestock_race_category_animal(models.Model):
     _order = "name, features_type asc"
 
     def _features_conf_animal_selection(self):
-        return(('species', "Species"),
-               ('race', "Race"),
-               ('category', "Category"))
+        return(('species', _("Species")),
+               ('race', _("Race")),
+               ('category', _("Category")))
 
     # Fields of the Configuration Animal Model
     name = fields.Selection(string='Features', index=True, selection=_features_conf_animal_selection, required=True, help="Animal characteristic")

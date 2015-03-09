@@ -9,8 +9,8 @@ class livestock_thermo(models.Model):
     _order = "name desc"
 
     def _purpose_thermo_selection(self):
-        return(('embryo', "Embryo"),
-               ('semen', "Semen"))
+        return(('embryo', _("Embryo")),
+               ('semen', _("Semen")))
 
     @api.one
     @api.depends('measure_ids')
@@ -82,6 +82,6 @@ class livestock_thermo_event(models.Model):
     name = fields.Char(string='Responsible', size=25, required=True, select=True, default=lambda self: self.env.user.name, help="Straw name")
     event_date = fields.Date(string='Date', default=datetime.now(), required=True, help="Event date")
     nitrogen_amount = fields.Float(string='Amount', digits=(5, 2), required=True)
-    event_type = fields.Selection(string='Event', selection=[('measure', 'Measurement'), ('refill', 'Refill')], required=True)
+    event_type = fields.Selection(string='Event', selection=[('measure', _("Measurement")), ('refill', _("Refill"))], required=True)
     can_id = fields.Many2one('livestock.thermo', string='Thermo', ondelete='cascade', index=True)
 

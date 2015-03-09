@@ -13,7 +13,6 @@ class livestock_weighing(models.Model):
     def _daily_gain_compute(self):
         self.daily_gain = 0.00
         if self.animal_id.id:
-#            self.env.cr.execute("SELECT weighing_date, current_weight FROM livestock_weighing WHERE animal_id = %s AND active ORDER BY weighing_date desc" % (self.animal_id.id))
             self.env.cr.execute("SELECT weighing_date, current_weight FROM livestock_weighing WHERE animal_id = %s AND weighing_date <= to_timestamp('%s','YYYY-MM-DD HH24:MI:SS') AND active ORDER BY weighing_date desc" % (self.animal_id.id, self.weighing_date))
             reg = self.env.cr.fetchall()
             if len(reg) > 1:
