@@ -51,14 +51,14 @@
                             <group>
                                 <field name="default_code" string="Identifier" attrs="{'required':True}"/>
                                 <field name="name"/>
-                                <field name="age"/>
+                                <label for="age"/><div><field name="age" class="oe_inline"/>   [year(s) - month(s) - day(s)]</div>
                                 <field name="species"/>
                                 <field name="race"/>
                                 <field name="colour"/>
                                 <field name="category"/>
                                 <field name="registration"/>
                                 <field name="gender"/>
-                                <field name="repro_stage"/>
+                                <field name="repro_stage" attrs="{'invisible':[('gender', '!=', 'female')]}"/>
                                 <field name="purchased"/>
                             </group>
                             <group>
@@ -95,7 +95,7 @@
                                         <field name="exam"/>
                                         <field name="symptoms"/>
                                         <field name="veterinarian"/>
-                                        <field name="created_date"/>
+                                        <field name="disease_date"/>
                                     </tree>
                                 </field>
                             </page>
@@ -128,7 +128,7 @@
                                     <tree string="Animal events">
                                         <field name="name"/>
                                         <field name="event_type"/>
-                                        <field name="created_date"/>
+                                        <field name="event_date"/>
                                         <field name="responsible"/>
                                     </tree>
                                 </field>

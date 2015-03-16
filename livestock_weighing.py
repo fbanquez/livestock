@@ -39,7 +39,7 @@ class livestock_weighing(models.Model):
             reg = self.env.cr.fetchall()[0]
             if reg:
                 diff = datetime.strptime(self.weighing_date,'%Y-%m-%d %H:%M:%S') - datetime.strptime(reg[1], '%Y-%m-%d')
-                self.adjusted_weight = ((self.current_weight - float(reg[0]))/(1 if diff.days == 0 else diff.days))*(self.projecting_days + float(reg[0]))
+                self.adjusted_weight = (((self.current_weight - float(reg[0]))/(1 if diff.days == 0 else diff.days)) * self.projecting_days) + float(reg[0])
 
     # Fields of the Weighing Model
     name = fields.Char(string='Identifier', size=8, required=True, help="Identifier of the Weighing")

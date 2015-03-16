@@ -106,7 +106,7 @@
                                 <field name="thermo_ids">
                                     <tree string="Thermo nitrogen measurement">
                                         <field name="name"/>
-                                        <field name="created_date"/>
+                                        <field name="thermo_date"/>
                                         <field name="capacity"/>
                                         <field name="purpose"/>
                                     </tree>

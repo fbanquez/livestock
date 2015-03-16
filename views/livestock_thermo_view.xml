@@ -32,7 +32,7 @@
                     <field name="capacity"/>
                     <field name="racks"/>
                     <field name="shelves"/>
-                    <field name="created_date"/>
+                    <field name="thermo_date"/>
                     <field name="purpose"/>
                     <field name="farm_id"/>
                     <field name="active"/>
@@ -61,7 +61,7 @@
                             <group>
                                 <field name="purpose"/>
                                 <field name="farm_id"/>
-                                <field name="created_date"/>
+                                <field name="thermo_date"/>
                                 <field name="last_measure"/>
                                 <field name="last_refill"/>
                             </group>
@@ -73,11 +73,11 @@
                             <page string="Straws">
                                     <field name="straws_ids">
                                         <tree string="Straws into thermo">
+                                            <field name="default_code" string="Identifier"/>
                                             <field name="name"/>
-                                            <field name="appellation"/>
                                             <field name="color"/>
                                             <field name="types"/>
-                                            <field name="created_date"/>
+                                            <field name="straw_date"/>
                                             <field name="contents"/>
                                             <field name="responsible"/>
                                         </tree>

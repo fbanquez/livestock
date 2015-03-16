@@ -32,7 +32,7 @@
                     <field name="exam"/>
                     <field name="symptoms"/>
                     <field name="veterinarian"/>
-                    <field name="created_date"/>
+                    <field name="disease_date"/>
                     <field name="active"/>
                 </tree>
             </field>
@@ -50,7 +50,7 @@
                                 <separator colspan="4" string="Disease Information"/>
                                 <field name="name"/>
                                 <field name="diagnostician"/>
-                                <field name="created_date"/>
+                                <field name="disease_date"/>
                                 <field name="veterinarian"/>
                                 <field name="animal_id"/>
                             </group>

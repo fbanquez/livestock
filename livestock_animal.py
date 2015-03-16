@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
+from dateutil.relativedelta import *
 from openerp import models, fields, api, _
 
 class livestock_animal(models.Model):
@@ -31,17 +32,20 @@ class livestock_animal(models.Model):
         self.env.cr.execute(query)
         return [(row[0], row[0]) for row in self.env.cr.fetchall()]
 
-    @api.depends('race', 'colour')
+    @api.onchange('race')
     def _colour_animal_selection(self):
+        print self.race
         if self.race:
             query = """SELECT color FROM livestock_color_animal WHERE race = %s
             AND active ORDER BY color"""
-            self.env.cr.execute(query, (self.race))
-        else:
-            query = """SELECT distinct(color) FROM livestock_color_animal WHERE active
-            ORDER BY color"""
-            self.env.cr.execute(query)
-        return [(row[0], row[0]) for row in self.env.cr.fetchall()]
+            self.env.cr.execute(query, (self.race,))
+        #else:
+        #    query = """SELECT distinct(color) FROM livestock_color_animal WHERE active
+        #    ORDER BY color"""
+        #    self.env.cr.execute(query)
+        col = [(row[0], row[0]) for row in self.env.cr.fetchall()]
+        print type(col), col
+        return col
 
     def _condition_animal_selection(self):
         return [(str(n), str(n)) for n in range(1, 10)]
@@ -53,7 +57,8 @@ class livestock_animal(models.Model):
         if self.born_date:
             today = datetime.now().date()
             bday = datetime.strptime(self.born_date, '%Y-%m-%d').date()
-            self.age = (today.year - bday.year)*12 + today.month - bday.month + (-1 if bday.day > today.day else 0)
+            rel = relativedelta(today, bday)
+            self.age = str(rel.years) + " - " + str(rel.months) + " - " + str(rel.days)
 
     def _category_animal_selection(self):
         query = """
@@ -80,6 +85,12 @@ class livestock_animal(models.Model):
                ('caesarean', _("Caesarean Section")),
                ('induced', _("Induced")))
 
+    def _repro_stage_selection(self):
+        return(('proestrus', _("Proestrus")),
+               ('estrus', _("Estrus")),
+               ('metestrus', _("Metestrus")),
+               ('diestrus', _("Diestrus")))
+
     @api.one
     def _get_image(self):
         return dict((s.id, tools.image_get_resized_images(s.image)) for s in self)
@@ -90,16 +101,17 @@ class livestock_animal(models.Model):
         
     # Fields of the Animal Model
     prod_id = fields.Many2one('product.product', string='Parent', required=True, ondelete='cascade', select=True, auto_join=True)
-    age = fields.Integer(string='Age', copy=False, readonly=True, compute='_age_animal_compute', help="Age of the animal in months")
+    age = fields.Char(string='Age', size=15, copy=False, readonly=True, compute='_age_animal_compute', help="Age of the animal in [years - months - days] format")
     species = fields.Selection(string='Species', selection=_species_animal_selection, required=True, help="Animal species")
     race = fields.Selection(string='Race', selection=_race_animal_selection, required=True, help="Breed of animal")
     colour = fields.Selection(string='Colour', selection=_colour_animal_selection, required=True, help="Color of animal")
+    #colour = fields.Many2one('livestock.color.animal', string='Colour', ondelete='set null', domain=[('race','=',race)])
     category = fields.Selection(string='Category',  selection=_category_animal_selection, required=True, help="Animal category")
     gestation = fields.Selection(string='Gestation', selection=_gestation_animal_selection, required=True, help="Type of gestation")
     biotech = fields.Selection(string='Biotechnology', selection=_biotech_animal_selection, required=False, help="Type of biotechnology that suitable gestation")
     registration = fields.Char(string='Registration', size=8, required=False, help="Identification of an animal to an association of farmers")
     gender = fields.Selection(string='Gender', selection=[('female', _("Female")), ('male', _("Male"))], required=True, help="Animal gender")
-    repro_stage = fields.Char(string='Reproductive Stage', size=50, required=True, help="Reproductive stage of the animal")
+    repro_stage = fields.Selection(string='Reproductive Stage', selection=_repro_stage_selection, required=True, help="Reproductive stage of the animal")
     birth_weight = fields.Float(string='Birth Weight', digits=(4, 2), required=True, help="Animal birth weight")
     born_date = fields.Date(string='Born Date', default=datetime.now(), required=True, help="Date of birth of the animal")
     labour_type = fields.Selection(string='Labour Type', required=True, selection=_labour_type_animal_selection, help="Type of birth of the animal")

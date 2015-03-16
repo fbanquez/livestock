@@ -29,7 +29,7 @@
                 <tree string="Event Tree">
                     <field name="name"/>
                     <field name="event_type"/>
-                    <field name="created_date"/>
+                    <field name="event_date"/>
                     <field name="responsible"/>
                     <field name="animal_id"/>
                     <field name="active"/>
@@ -48,7 +48,7 @@
                             <separator colspan="4" string="Other Events Information"/>
                             <group col="2">
                                 <field name="name"/>
-                                <field name="created_date"/>
+                                <field name="event_date"/>
                                 <field name="animal_id"/>
                                 <field name="event_type"/>
                                 <field name="description"/>

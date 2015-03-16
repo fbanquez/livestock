@@ -62,7 +62,7 @@ class livestock_thermo(models.Model):
     capacity = fields.Float(string='Capacity', digits=(5, 2), required=True, help="Thermo Capacity in liters")
     racks = fields.Integer(string='Racks', required=True, help="Numbers of racks into the thermo")
     shelves = fields.Integer(string='Shelves', required=True, help="Numbers of shelves into the rack's thermo")
-    created_date = fields.Date(string='Created', default=datetime.now(), required=True, help="Effective date of the thermo first use")
+    thermo_date = fields.Date(string='Created', default=datetime.now(), required=True, help="Effective date of the thermo first use")
     purpose = fields.Selection(string='Purpose', selection=_purpose_thermo_selection, required=True, help="Thermo purpose. Store embryos or semen")
     straws_ids = fields.One2many('livestock.straw', 'thermo_id', string=None, copy=False)
     last_measure = fields.Integer(string='Last Measure', copy=False, readonly=True, compute='_measure_compute_date', help="Days since the last measurement of nitrogen")
