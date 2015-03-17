@@ -6,7 +6,7 @@ from openerp import models, fields, api, _
 class livestock_event(models.Model):
     _name = 'livestock.event'
     _description = "Livestock Event Model"
-    _order = "created_date desc"
+    _order = "event_date desc"
 
     def _event_type_event_selection(self):
         return(('gestation', _("Gestation")),
