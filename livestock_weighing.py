@@ -54,3 +54,4 @@ class livestock_weighing(models.Model):
     animal_id = fields.Many2one('livestock.animal', string='Animal', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable weighing record")
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

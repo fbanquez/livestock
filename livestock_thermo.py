@@ -5,12 +5,13 @@ from openerp import models, fields, api, _
 
 class livestock_thermo(models.Model):
     _name = 'livestock.thermo'
+    _inherits = {'product.product': 'base_id'} 
     _description = "Livestock Thermo model"
-    _order = "name desc"
+    _order = "id asc"
 
     def _purpose_thermo_selection(self):
-        return(('embryo', _("Embryo")),
-               ('semen', _("Semen")))
+        return(('embryo', _("Embryo Storage")),
+               ('semen', _("Semen Storage")))
 
     @api.one
     @api.depends('measure_ids')
@@ -57,7 +58,8 @@ class livestock_thermo(models.Model):
         self.last_refill = diff.days
 
     # Fields of the Thermo Model
-    name = fields.Char(string='Identifier', size=8, required=True, select=True, help="Thermo Identifier")
+    base_id = fields.Many2one('product.product', string='Parent', required=True, ondelete='cascade', select=True, auto_join=True)
+    #name = fields.Char(string='Identifier', size=8, required=True, select=True, help="Thermo Identifier")
     characteristics =  fields.Char(string='Characteristics', size=50, required=True, help="Thermo characteristics")
     capacity = fields.Float(string='Capacity', digits=(5, 2), required=True, help="Thermo Capacity in liters")
     racks = fields.Integer(string='Racks', required=True, help="Numbers of racks into the thermo")
@@ -85,3 +87,4 @@ class livestock_thermo_event(models.Model):
     event_type = fields.Selection(string='Event', selection=[('measure', _("Measurement")), ('refill', _("Refill"))], required=True)
     can_id = fields.Many2one('livestock.thermo', string='Thermo', ondelete='cascade', index=True)
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

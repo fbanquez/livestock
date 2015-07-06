@@ -36,3 +36,4 @@ class livestock_sanitary_protocol(models.Model):
     disease_id = fields.Many2one('livestock.disease', string='Disease', ondelete='cascade', index=True)     
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable treatment record")
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -10,43 +10,6 @@ class livestock_animal(models.Model):
     _description = "Livestock Animal model"
     _order = "id, born_date desc"
 
-    def _species_animal_selection(self):
-        query = """
-        SELECT features_type
-        FROM livestock_race_category_animal
-        WHERE name = 'species'
-        AND active
-        ORDER BY features_type
-        """
-        self.env.cr.execute(query)
-        return [(row[0], row[0]) for row in self.env.cr.fetchall()]
-
-    def _race_animal_selection(self):
-        query = """
-        SELECT features_type
-        FROM livestock_race_category_animal
-        WHERE name = 'race'
-        AND active
-        ORDER BY features_type
-        """
-        self.env.cr.execute(query)
-        return [(row[0], row[0]) for row in self.env.cr.fetchall()]
-
-    @api.onchange('race')
-    def _colour_animal_selection(self):
-        print self.race
-        if self.race:
-            query = """SELECT color FROM livestock_color_animal WHERE race = %s
-            AND active ORDER BY color"""
-            self.env.cr.execute(query, (self.race,))
-        #else:
-        #    query = """SELECT distinct(color) FROM livestock_color_animal WHERE active
-        #    ORDER BY color"""
-        #    self.env.cr.execute(query)
-        col = [(row[0], row[0]) for row in self.env.cr.fetchall()]
-        print type(col), col
-        return col
-
     def _condition_animal_selection(self):
         return [(str(n), str(n)) for n in range(1, 10)]
 
@@ -60,24 +23,13 @@ class livestock_animal(models.Model):
             rel = relativedelta(today, bday)
             self.age = str(rel.years) + " - " + str(rel.months) + " - " + str(rel.days)
 
-    def _category_animal_selection(self):
-        query = """
-        SELECT features_type
-        FROM livestock_race_category_animal
-        WHERE name = 'category'
-        AND active
-        ORDER BY features_type
-        """
-        self.env.cr.execute(query)
-        return [(row[0], row[0]) for row in self.env.cr.fetchall()]
-
     def _gestation_animal_selection(self):
         return(('mating', _("Natural Mating")),
                ('biotechnology', _("Biotechnology")))
 
     def _biotech_animal_selection(self):
         return(('insemination', _("Artificial Insemination")),
-               ('washing', _("Sperm Washing")),
+               ('flushing', _("Follicular Flushing")),
                ('aspiration', _("Follicular Aspiration")))
 
     def _labour_type_animal_selection(self):
@@ -102,16 +54,10 @@ class livestock_animal(models.Model):
     # Fields of the Animal Model
     prod_id = fields.Many2one('product.product', string='Parent', required=True, ondelete='cascade', select=True, auto_join=True)
     age = fields.Char(string='Age', size=15, copy=False, readonly=True, compute='_age_animal_compute', help="Age of the animal in [years - months - days] format")
-    species = fields.Selection(string='Species', selection=_species_animal_selection, required=True, help="Animal species")
-    race = fields.Selection(string='Race', selection=_race_animal_selection, required=True, help="Breed of animal")
-    colour = fields.Selection(string='Colour', selection=_colour_animal_selection, required=True, help="Color of animal")
-    #colour = fields.Many2one('livestock.color.animal', string='Colour', ondelete='set null', domain=[('race','=',race)])
-    category = fields.Selection(string='Category',  selection=_category_animal_selection, required=True, help="Animal category")
     gestation = fields.Selection(string='Gestation', selection=_gestation_animal_selection, required=True, help="Type of gestation")
     biotech = fields.Selection(string='Biotechnology', selection=_biotech_animal_selection, required=False, help="Type of biotechnology that suitable gestation")
     registration = fields.Char(string='Registration', size=8, required=False, help="Identification of an animal to an association of farmers")
     gender = fields.Selection(string='Gender', selection=[('female', _("Female")), ('male', _("Male"))], required=True, help="Animal gender")
-    repro_stage = fields.Selection(string='Reproductive Stage', selection=_repro_stage_selection, required=True, help="Reproductive stage of the animal")
     birth_weight = fields.Float(string='Birth Weight', digits=(4, 2), required=True, help="Animal birth weight")
     born_date = fields.Date(string='Born Date', default=datetime.now(), required=True, help="Date of birth of the animal")
     labour_type = fields.Selection(string='Labour Type', required=True, selection=_labour_type_animal_selection, help="Type of birth of the animal")
@@ -123,11 +69,16 @@ class livestock_animal(models.Model):
     condition = fields.Selection(string='Condition', selection=_condition_animal_selection, required=False, help="Body condition of animal")
     features = fields.Text(string='Features', size=500, required=False, help="Special features of the animal")
     ####     #####     ####
-    corral_id = fields.Many2one('livestock.corral', string='Corral', ondelete='set null', index=True)
-    female_parent_id = fields.Many2one('livestock.animal', string='Mother', ondelete='set null', index=True, domain=[('gender','=','female')])
-    male_parent_id = fields.Many2one('livestock.animal', string='Father', ondelete='set null', index=True, domain=[('gender','=','male')])
+    specie_id = fields.Many2one(comodel_name='livestock.specie.animal', string='Specie', ondelete='set null', index=True)
+    race_id = fields.Many2one(comodel_name='livestock.race.animal', string='Race', ondelete='set null', index=True)
+    colour_id = fields.Many2one(comodel_name='livestock.color.animal', string='Color', ondelete='set null', index=True)
+    status_id = fields.Many2one(comodel_name='livestock.status.animal', string='Status', ondelete='set null', index=True)
+    corral_id = fields.Many2one(comodel_name='livestock.corral', string='Corral', ondelete='set null', index=True)
+    female_parent_id = fields.Many2one(comodel_name='livestock.animal', string='Mother', ondelete='set null', index=True, domain=[('gender','=','female')])
+    male_parent_id = fields.Many2one(comodel_name='livestock.animal', string='Father', ondelete='set null', index=True, domain=[('gender','=','male')])
     disease_ids = fields.One2many('livestock.disease', 'animal_id', string=None, copy=False)
     nutrition_ids = fields.One2many('livestock.nutrition', 'animal_id', string=None, copy=False)
     weighing_ids = fields.One2many('livestock.weighing', 'animal_id', string=None, copy=False)
     event_ids = fields.One2many('livestock.event', 'animal_id', string=None, copy=False)
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

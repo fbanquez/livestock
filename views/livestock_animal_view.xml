@@ -29,12 +29,12 @@
                 <tree string="Animal Tree">
                     <field name="default_code" string="Identifier"/>
                     <field name="name"/>
+                    <field name="race_id"/>
                     <field name="gender"/>
-                    <field name="species"/>
-                    <field name="race"/>
+                    <field name="status_id"/>
                     <field name="born_date"/>
                     <field name="registration"/>
-                    <field name="active"/>
+
                 </tree>
             </field>
         </record>
@@ -51,14 +51,13 @@
                             <group>
                                 <field name="default_code" string="Identifier" attrs="{'required':True}"/>
                                 <field name="name"/>
-                                <label for="age"/><div><field name="age" class="oe_inline"/>   [year(s) - month(s) - day(s)]</div>
-                                <field name="species"/>
-                                <field name="race"/>
-                                <field name="colour"/>
-                                <field name="category"/>
-                                <field name="registration"/>
+                                <field name="specie_id"/>
+                                <field name="race_id" domain="[('specie_id','=',specie_id)]"/>
+                                <field name="colour_id" domain="[('race_id','=',race_id)]"/>
                                 <field name="gender"/>
-                                <field name="repro_stage" attrs="{'invisible':[('gender', '!=', 'female')]}"/>
+                                <field name="status_id" domain="[('gender','=',gender)]"/>
+                                <field name="registration"/>
+                                <!--field name="repro_stage" attrs="{'invisible':[('gender', '!=', 'female')]}"/-->
                                 <field name="purchased"/>
                             </group>
                             <group>
@@ -70,6 +69,7 @@
                                 <field name="female_parent_id"/>
                                 <field name="male_parent_id"/>
                                 <field name="born_date"/>
+                                <label for="age"/><div><field name="age" class="oe_inline"/>   [year(s) - month(s) - day(s)]</div>
                                 <label for="birth_weight"/><div><field name="birth_weight" class="oe_inline"/> kg</div>
                                 <field name="labour_type"/>
                                 <field name="gestation"/>

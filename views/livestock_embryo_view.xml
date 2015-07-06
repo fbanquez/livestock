@@ -28,8 +28,8 @@
             <field name="arch" type="xml">
                 <tree string="Embryo Tree">
                     <field name="name"/>
-                    <field name="species"/>
-                    <field name="race"/>
+                    <field name="species_id"/>
+                    <field name="race_id"/>
                     <field name="mother"/>
                     <field name="father"/>
                     <field name="phase"/>
@@ -52,8 +52,8 @@
                         <group colspan="2" col="2">
                             <separator colspan="4" string="Basic Information"/>
                             <field name="name"/>
-                            <field name="species"/>
-                            <field name="race"/>
+                            <field name="species_id"/>
+                            <field name="race_id"/>
                         </group>
                         <group col="4">
                             <field name="active"/>

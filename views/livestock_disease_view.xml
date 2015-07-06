@@ -48,11 +48,11 @@
                         <group col="2">
                             <group col="2">
                                 <separator colspan="4" string="Disease Information"/>
+                                <field name="animal_id"/>
                                 <field name="name"/>
                                 <field name="diagnostician"/>
                                 <field name="disease_date"/>
                                 <field name="veterinarian"/>
-                                <field name="animal_id"/>
                             </group>
                             <group col="2">
                             </group>

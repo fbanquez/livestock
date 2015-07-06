@@ -56,7 +56,9 @@
                                 <field name="contents"/>
                             </group>
                             <group col="2">
-                                <field name="thermo_id"/>      
+                                <field name="thermo_id"/>
+                                <field name="rack"/>
+                                <field name="shelve"/>
                                 <field name="responsible"/>
                                 <field name="straw_date"/>                       
                             </group>

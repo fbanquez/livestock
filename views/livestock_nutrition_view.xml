@@ -47,6 +47,7 @@
                         <group col="4">
                             <separator colspan="4" string="Nutrition Information"/>
                             <group col="2">
+                                <field name="animal_id"/>
                                 <field name="name"/>
                                 <field name="supplement_type"/>
                                 <field name="manufacturing_lab"/>
@@ -54,7 +55,6 @@
                                 <field name="dosage"/>
                                 <field name="administration_route"/>
                                 <field name="application_frequency"/>
-                                <field name="animal_id"/>
                                 <field name="responsible"/>
                                 <field name="active"/>
                             </group>

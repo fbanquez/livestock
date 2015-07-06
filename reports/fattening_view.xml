@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="fattening_report">
+            <t t-call="report.html_container">
+                <t t-call="report.internal_layout">
+                    <div class="page">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Identificador</th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-left">Fecha Nacimiento</th>
+                                    <th class="text-left">Peso</th>
+                                    <th class="text-left">Id Potrero</th>
+                                    <th class="text-left">Nombre Potrero</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <div class="row">
+                                <tr t-foreach="docs" t-as="o">
+                                    <td class="text-left">
+                                        <span t-field="o.default_code"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="o.name"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="o.born_date"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="o.weighing_ids[0].current_weight"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="o.corral_id.code"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="o.corral_id.name"/>
+                                    </td>
+                                </tr>
+                                </div>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

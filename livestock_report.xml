@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            id="livestock_offspring_report"
+            model="livestock.animal"
+            string="Animal Offspring"
+            report_type="qweb-html"
+            name="livestock.offspring_report"
+            file="livestock.offspring_report"
+        />
+
+        <report
+            id="livestock_fattening_report"
+            model="livestock.animal"
+            string="Animal Fattening"
+            report_type="qweb-html"
+            name="livestock.fattening_report"
+            file="livestock.fattening_report"
+        />
+
+        <report
+            id="livestock_thermo_report"
+            model="livestock.thermo"
+            string="Thermo Content"
+            report_type="qweb-html"
+            name="livestock.thermo_report"
+            file="livestock.thermo_report"
+        />
+
+        <report
+            id="livestock_corral_report"
+            model="livestock.corral"
+            string="Corral Content"
+            report_type="qweb-html"
+            name="livestock.corral_report"
+            file="livestock.corral_report"
+        />
+    </data>
+</openerp>

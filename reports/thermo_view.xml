@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="thermo_report">
+            <t t-call="report.html_container">
+                <t t-call="report.internal_layout">
+                    <div class="page">
+                       <t t-foreach="docs" t-as="o">
+                            <div class="row mt32 mb32">
+                                <div class="col-xs-2">
+                                    <strong>Nombre del Termo:</strong>
+                                    <p t-field="o.name"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <strong>Proposito:</strong>
+                                    <p t-field="o.purpose"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <strong>Capacidad en Litros:</strong>
+                                    <p t-field="o.capacity"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <strong>Cant. Canastillas:</strong>
+                                    <p t-field="o.racks"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <strong>Cant. Escalera:</strong>
+                                    <p t-field="o.shelves"/>
+                                </div>
+                            </div>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Identificador</th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-left">Color</th>
+                                    <th class="text-left">Canastilla</th>
+                                    <th class="text-left">Escalera</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <div class="row">
+                                <tr t-foreach="o.straws_ids" t-as="p">
+                                    <td class="text-left">
+                                        <span t-field="p.default_code"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="p.name"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="p.color"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="p.rack"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="p.shelve"/>
+                                    </td>
+                                </tr>
+                                </div>
+                            </tbody>
+                        </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

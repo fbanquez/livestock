@@ -11,5 +11,7 @@ access_livestock_sanitary_protocol,livestock.sanitary.protocol,model_livestock_s
 access_livestock_weighing,livestock.weighing,model_livestock_weighing,,1,0,0,0
 access_livestock_nutrition,livestock.nutrition,model_livestock_nutrition,,1,0,0,0
 access_livestock_animal_protocol,livestock.animal,model_livestock_animal,,1,0,0,0
-access_livestock_race_category_animal,livestock.race.category.animal,model_livestock_race_category_animal,,1,0,0,0
+access_livestock_specie_animal,livestock.specie.animal,model_livestock_specie_animal,,1,0,0,0
+access_livestock_race_animal,livestock.race.animal,model_livestock_race_animal,,1,0,0,0
 access_livestock_color_animal,livestock.color.animal,model_livestock_color_animal,,1,0,0,0
+access_livestock_status_animal,livestock.status.animal,model_livestock_status_animal,,1,0,0,0

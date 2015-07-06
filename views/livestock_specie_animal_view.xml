@@ -6,9 +6,9 @@
         The following tag is an action definition for a "windows action",
         that is an action opening a view or a set of views
         -->
-        <record id="livestock_color_animal_action" model="ir.actions.act_window">
-            <field name="name">Animal Colour</field>
-            <field name="res_model">livestock.color.animal</field>
+        <record id="livestock_specie_animal_action" model="ir.actions.act_window">
+            <field name="name">Animal Specie</field>
+            <field name="res_model">livestock.specie.animal</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
          </record>
@@ -19,15 +19,14 @@
         <!-- a first level in the left side menu is needed before using action = attribute -->
         <!-- This menu action belong to event option -->
         <menuitem id="livestock_configure_submenu" parent="livestock_menu" name="Configuration"/>
-        <menuitem id="livestock_color_animal_submenu_action" parent="livestock_configure_submenu" name="Animal Color Setup" action="livestock_color_animal_action"/>
+        <menuitem id="livestock_specie_animal_submenu_action" parent="livestock_configure_submenu" name="Animal Specie Setup" action="livestock_specie_animal_action"/>
 
         <!-- Tree View -->
-        <record id="livestock_color_animal_tree" model="ir.ui.view">
-            <field name="name">livestock.color.animal.tree</field>
-            <field name="model">livestock.color.animal</field>
+        <record id="livestock_specie_animal_tree" model="ir.ui.view">
+            <field name="name">livestock.specie.animal.tree</field>
+            <field name="model">livestock.specie.animal</field>
             <field name="arch" type="xml">
-                <tree string="Animal Color Tree">
-                    <field name="race_id"/>
+                <tree string="Animal Specie Tree">
                     <field name="name"/>
                     <field name="description"/>
                     <field name="active"/>
@@ -36,16 +35,15 @@
         </record>
         
         <!-- Form View -->
-        <record id="livestock_color_animal_form" model="ir.ui.view">
-            <field name="name">livestock.color.animal.form</field>
-            <field name="model">livestock.color.animal</field>
+        <record id="livestock_specie_animal_form" model="ir.ui.view">
+            <field name="name">livestock.specie.animal.form</field>
+            <field name="model">livestock.specie.animal</field>
             <field name="arch" type="xml">
-                <form string="Animal Color Form">
+                <form string="Animal Specie Form">
                     <sheet>
                         <group col="4">
-                            <separator colspan="4" string="Setting Animal's Color"/>
+                            <separator colspan="4" string="Setting Animal's Specie"/>
                             <group col="2">
-                                <field name="race_id"/>
                                 <field name="name"/>
                                 <field name="description"/>
                                 <field name="active"/>

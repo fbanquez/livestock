@@ -8,28 +8,6 @@ class livestock_embryo(models.Model):
     _description = "Livestock Embryo model"
     _order = "id desc"
 
-    def _species_embryo_selection(self):
-        query = """
-        SELECT features_type
-        FROM livestock_race_category_animal
-        WHERE name = 'species'
-        AND active
-        ORDER BY features_type
-        """
-        self.env.cr.execute(query)
-        return [(row[0], row[0]) for row in self.env.cr.fetchall()]
-
-    def _race_embryo_selection(self):
-        query = """
-        SELECT features_type
-        FROM livestock_race_category_animal
-        WHERE name = 'race'
-        AND active
-        ORDER BY features_type
-        """
-        self.env.cr.execute(query)
-        return [(row[0], row[0]) for row in self.env.cr.fetchall()]
-
     def _phase_embryo_selection(self):
         return(('mo', _("Morula")),
                ('cm', _("Compact Morula")),
@@ -45,8 +23,8 @@ class livestock_embryo(models.Model):
 
     # Fields of the Embryo Model
     name = fields.Char(string='Identifier', size=8, required=True, select=True, help="Alphanumeric identifier embryo")
-    species =  fields.Selection(string='Species', selection=_species_embryo_selection, required=True, help="Embryo species")
-    race = fields.Selection(string='Race', selection=_race_embryo_selection, required=True, help="Embryo race")
+    species_id =  fields.Many2one(comodel_name='livestock.specie.animal', string='Species', required=True, ondelete='set null', help="Embryo species")
+    race_id = fields.Many2one(comodel_name='livestock.race.animal', string='Race', required=True, ondelete='set null', help="Embryo race")
     mother = fields.Many2one('livestock.animal', string='Mother', ondelete='set null', index=True, domain=[('gender','=','female')], help="Female donor")
     father = fields.Many2one('livestock.animal', string='Father', ondelete='set null', index=True, domain=[('gender','=','male')], help="Male donor")
     phase = fields.Selection(string='Phase', selection=_phase_embryo_selection, required=True, help="Phase embryo")
@@ -57,3 +35,4 @@ class livestock_embryo(models.Model):
     straw_id = fields.Many2one('livestock.straw', string='Straw', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable record")
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

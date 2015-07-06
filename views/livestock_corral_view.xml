@@ -27,7 +27,7 @@
             <field name="model">livestock.corral</field>
             <field name="arch" type="xml">
                 <tree string="Corral Tree">
-                    <field name="code"/>
+                    <field name="code" string="Identifier"/>
                     <field name="name"/>
                     <field name="purpose"/>
                     <field name="hectares"/>
@@ -47,7 +47,7 @@
                     <sheet>
                         <group colspan="2" col="2">
                             <separator colspan="4" string="Corral Information"/>
-                            <field name="code"/>
+                            <field name="code" string="Identifier"/>
                             <field name="name"/>
                             <field name="farm_id"/>
                         </group>
@@ -57,6 +57,7 @@
                                 <label for="hectares"/><div><field name="hectares" class="oe_inline"/> ha</div>
                                 <field name="topography"/>
                                 <field name="drinking_water"/>
+                                <field name="animals"/>
                             </group>
                             <group>
                             </group>
@@ -75,11 +76,11 @@
                             <page string="Animals">
                                     <field name="animal_ids">
                                         <tree string="Animals into corral">
+                                            <field name="default_code"/>
                                             <field name="name"/>
-                                            <field name="race"/>
-                                            <field name="registration"/>
+                                            <field name="race_id"/>
+                                            <field name="status_id"/>
                                             <field name="gender"/>
-                                            <field name="born_date"/>
                                         </tree>
                                     </field>
                             </page>

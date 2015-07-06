@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="livestock_corral_wizard_view">
+            <field name="name">livestock.corral.wizard.form</field>
+            <field name="model">livestock.corral.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Parameter Report">
+                    <group>
+                        <field name="identifier"/>
+                        <field name="gender"/>
+                        <field name="status"/>
+                    </group>
+                    <footer>
+                        <button name="corral_report_creator" type="object" string="Subscribe" class="oe_highlight"/>
+                         - 
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_livestock_corral_wizard"
+                    name="Corral's Report Parameter"
+                    src_model="livestock.corral"
+                    res_model="livestock.corral.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+
+        <!--menuitem id="livestock_livestock_submenu" parent="livestock_menu" name="Livestock"/-->
+        <menuitem id="livestock_corral_report_action" parent="livestock_facilities_submenu" name="Corral Report" action="launch_livestock_corral_wizard"/>
+
+    </data>
+</openerp>

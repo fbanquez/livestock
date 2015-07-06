@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="corral_report">
+            <t t-call="report.html_container">
+                <t t-call="report.internal_layout">
+                    <div class="page">
+                       <t t-foreach="docs" t-as="o">
+                            <div class="row mt32 mb32">
+                                <div class="col-xs-2">
+                                    <strong>Identificador del Corral:</strong>
+                                    <p t-field="o.code"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <strong>Nombre del Corral:</strong>
+                                    <p t-field="o.name"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <strong>Proposito:</strong>
+                                    <p t-field="o.purpose"/>
+                                </div>
+                            </div>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">Número</th>
+                                    <th class="text-left">Identificador</th>
+                                    <th class="text-left">Registro</th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-left">Raza</th>
+                                    <th class="text-left">Color</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <div class="row">
+                                    <t t-set="counter" t-value="1"/>
+                                    <tr t-foreach="o.animal_ids" t-as="a">
+                                        <td class="text-left">
+                                            <span t-esc="counter"/>
+                                        </td>
+                                        <td class="text-left">
+                                            <span t-field="a.default_code"/>
+                                        </td>
+                                        <td class="text-left">
+                                            <span t-field="a.registration"/>
+                                        </td>
+                                        <td class="text-left">
+                                            <span t-field="a.name"/>
+                                        </td>
+                                        <td class="text-left">
+                                            <span t-field="a.race_id"/>
+                                        </td>
+                                        <td class="text-left">
+                                            <span t-field="a.colour_id"/>
+                                        </td>
+                                        <t t-set="counter" t-value="counter + 1"/>
+                                    </tr>
+                                </div>
+                            </tbody>
+                        </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

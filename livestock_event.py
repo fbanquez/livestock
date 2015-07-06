@@ -11,6 +11,7 @@ class livestock_event(models.Model):
     def _event_type_event_selection(self):
         return(('gestation', _("Gestation")),
                ('palpation', _("Palpation")),
+               ('weaning', _("Weaning")),
                ('other', _("Other")))
 
     # Fields of the Event Model
@@ -22,3 +23,4 @@ class livestock_event(models.Model):
     animal_id = fields.Many2one('livestock.animal', string='Animal', ondelete='cascade', index=True)
     active = fields.Boolean(string='Active', default=True, help="Enable/Disable event record")
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
